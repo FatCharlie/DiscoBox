@@ -1,0 +1,81 @@
+<svg width="100%" viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Orbital twist and radial structure of the light modes used in this project</title>
+<desc>Two rows of small circular mode patterns. Top row shows increasing orbital angular momentum: a growing dark core and color that cycles more times around the ring, from no twist to a triple twist. Bottom row shows increasing radial index: the same single-color ring splitting into two, then three, then four concentric rings.</desc>
+<rect x="0" y="0" width="720" height="520" rx="18" fill="#0f1220"/>
+<text x="360.0" y="40.0" font-family="Helvetica, Arial, sans-serif" font-size="20" text-anchor="middle" fill="#e7e9f5" font-weight="600">Two knobs, one photon</text>
+<text x="360.0" y="62.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">the extra structure this project packs into a single particle of light</text>
+<text x="56.0" y="86.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#9aa0c3" font-weight="400">orbital twist (l)</text>
+<circle cx="100" cy="150" r="52" fill="#171b30"/>
+<path d="M 141.40 150.00 A 41.40 41.40 0 1 1 141.40 149.96 L 100.00 150.00 A 0.00 0.00 0 1 0 100.00 150.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<text x="100.0" y="220.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">l = 0</text>
+<circle cx="240" cy="150" r="52" fill="#171b30"/>
+<path d="M 282.14 150.00 A 42.14 42.14 0 0 1 277.96 168.28 L 252.90 156.21 A 14.32 14.32 0 0 0 254.32 150.00 Z" fill="#f2633d"/>
+<path d="M 277.96 168.28 A 42.14 42.14 0 0 1 266.27 182.94 L 248.93 161.19 A 14.32 14.32 0 0 0 252.90 156.21 Z" fill="#f2b13d"/>
+<path d="M 266.27 182.94 A 42.14 42.14 0 0 1 249.38 191.08 L 243.19 163.96 A 14.32 14.32 0 0 0 248.93 161.19 Z" fill="#e5f23d"/>
+<path d="M 249.38 191.08 A 42.14 42.14 0 0 1 230.62 191.08 L 236.81 163.96 A 14.32 14.32 0 0 0 243.19 163.96 Z" fill="#97f23d"/>
+<path d="M 230.62 191.08 A 42.14 42.14 0 0 1 213.73 182.94 L 231.07 161.19 A 14.32 14.32 0 0 0 236.81 163.96 Z" fill="#4af23d"/>
+<path d="M 213.73 182.94 A 42.14 42.14 0 0 1 202.04 168.28 L 227.10 156.21 A 14.32 14.32 0 0 0 231.07 161.19 Z" fill="#3df27d"/>
+<path d="M 202.04 168.28 A 42.14 42.14 0 0 1 197.86 150.00 L 225.68 150.00 A 14.32 14.32 0 0 0 227.10 156.21 Z" fill="#3df2cb"/>
+<path d="M 197.86 150.00 A 42.14 42.14 0 0 1 202.04 131.72 L 227.10 143.79 A 14.32 14.32 0 0 0 225.68 150.00 Z" fill="#3dcbf2"/>
+<path d="M 202.04 131.72 A 42.14 42.14 0 0 1 213.73 117.06 L 231.07 138.81 A 14.32 14.32 0 0 0 227.10 143.79 Z" fill="#3d7df2"/>
+<path d="M 213.73 117.06 A 42.14 42.14 0 0 1 230.62 108.92 L 236.81 136.04 A 14.32 14.32 0 0 0 231.07 138.81 Z" fill="#4a3df2"/>
+<path d="M 230.62 108.92 A 42.14 42.14 0 0 1 249.38 108.92 L 243.19 136.04 A 14.32 14.32 0 0 0 236.81 136.04 Z" fill="#973df2"/>
+<path d="M 249.38 108.92 A 42.14 42.14 0 0 1 266.27 117.06 L 248.93 138.81 A 14.32 14.32 0 0 0 243.19 136.04 Z" fill="#e53df2"/>
+<path d="M 266.27 117.06 A 42.14 42.14 0 0 1 277.96 131.72 L 252.90 143.79 A 14.32 14.32 0 0 0 248.93 138.81 Z" fill="#f23db1"/>
+<path d="M 277.96 131.72 A 42.14 42.14 0 0 1 282.14 150.00 L 254.32 150.00 A 14.32 14.32 0 0 0 252.90 143.79 Z" fill="#f23d63"/>
+<text x="240.0" y="220.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">l = 1</text>
+<circle cx="380" cy="150" r="52" fill="#171b30"/>
+<path d="M 422.52 150.00 A 42.52 42.52 0 0 1 418.31 168.45 L 395.70 157.56 A 17.43 17.43 0 0 0 397.43 150.00 Z" fill="#f28a3d"/>
+<path d="M 418.31 168.45 A 42.52 42.52 0 0 1 406.51 183.24 L 390.87 163.63 A 17.43 17.43 0 0 0 395.70 157.56 Z" fill="#bef23d"/>
+<path d="M 406.51 183.24 A 42.52 42.52 0 0 1 389.46 191.45 L 383.88 166.99 A 17.43 17.43 0 0 0 390.87 163.63 Z" fill="#3df257"/>
+<path d="M 389.46 191.45 A 42.52 42.52 0 0 1 370.54 191.45 L 376.12 166.99 A 17.43 17.43 0 0 0 383.88 166.99 Z" fill="#3df2f2"/>
+<path d="M 370.54 191.45 A 42.52 42.52 0 0 1 353.49 183.24 L 369.13 163.63 A 17.43 17.43 0 0 0 376.12 166.99 Z" fill="#3d57f2"/>
+<path d="M 353.49 183.24 A 42.52 42.52 0 0 1 341.69 168.45 L 364.30 157.56 A 17.43 17.43 0 0 0 369.13 163.63 Z" fill="#be3df2"/>
+<path d="M 341.69 168.45 A 42.52 42.52 0 0 1 337.48 150.00 L 362.57 150.00 A 17.43 17.43 0 0 0 364.30 157.56 Z" fill="#f23d8a"/>
+<path d="M 337.48 150.00 A 42.52 42.52 0 0 1 341.69 131.55 L 364.30 142.44 A 17.43 17.43 0 0 0 362.57 150.00 Z" fill="#f28a3d"/>
+<path d="M 341.69 131.55 A 42.52 42.52 0 0 1 353.49 116.76 L 369.13 136.37 A 17.43 17.43 0 0 0 364.30 142.44 Z" fill="#bef23d"/>
+<path d="M 353.49 116.76 A 42.52 42.52 0 0 1 370.54 108.55 L 376.12 133.01 A 17.43 17.43 0 0 0 369.13 136.37 Z" fill="#3df257"/>
+<path d="M 370.54 108.55 A 42.52 42.52 0 0 1 389.46 108.55 L 383.88 133.01 A 17.43 17.43 0 0 0 376.12 133.01 Z" fill="#3df2f2"/>
+<path d="M 389.46 108.55 A 42.52 42.52 0 0 1 406.51 116.76 L 390.87 136.37 A 17.43 17.43 0 0 0 383.88 133.01 Z" fill="#3d57f2"/>
+<path d="M 406.51 116.76 A 42.52 42.52 0 0 1 418.31 131.55 L 395.70 142.44 A 17.43 17.43 0 0 0 390.87 136.37 Z" fill="#be3df2"/>
+<path d="M 418.31 131.55 A 42.52 42.52 0 0 1 422.52 150.00 L 397.43 150.00 A 17.43 17.43 0 0 0 395.70 142.44 Z" fill="#f23d8a"/>
+<text x="380.0" y="220.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">l = 2</text>
+<circle cx="520" cy="150" r="52" fill="#171b30"/>
+<path d="M 562.82 150.00 A 42.82 42.82 0 0 1 558.58 168.58 L 537.97 158.65 A 19.95 19.95 0 0 0 539.95 150.00 Z" fill="#f2b13d"/>
+<path d="M 558.58 168.58 A 42.82 42.82 0 0 1 546.70 183.48 L 532.44 165.60 A 19.95 19.95 0 0 0 537.97 158.65 Z" fill="#4af23d"/>
+<path d="M 546.70 183.48 A 42.82 42.82 0 0 1 529.53 191.75 L 524.44 169.45 A 19.95 19.95 0 0 0 532.44 165.60 Z" fill="#3dcbf2"/>
+<path d="M 529.53 191.75 A 42.82 42.82 0 0 1 510.47 191.75 L 515.56 169.45 A 19.95 19.95 0 0 0 524.44 169.45 Z" fill="#973df2"/>
+<path d="M 510.47 191.75 A 42.82 42.82 0 0 1 493.30 183.48 L 507.56 165.60 A 19.95 19.95 0 0 0 515.56 169.45 Z" fill="#f23d63"/>
+<path d="M 493.30 183.48 A 42.82 42.82 0 0 1 481.42 168.58 L 502.03 158.65 A 19.95 19.95 0 0 0 507.56 165.60 Z" fill="#e5f23d"/>
+<path d="M 481.42 168.58 A 42.82 42.82 0 0 1 477.18 150.00 L 500.05 150.00 A 19.95 19.95 0 0 0 502.03 158.65 Z" fill="#3df27d"/>
+<path d="M 477.18 150.00 A 42.82 42.82 0 0 1 481.42 131.42 L 502.03 141.35 A 19.95 19.95 0 0 0 500.05 150.00 Z" fill="#3d7df2"/>
+<path d="M 481.42 131.42 A 42.82 42.82 0 0 1 493.30 116.52 L 507.56 134.40 A 19.95 19.95 0 0 0 502.03 141.35 Z" fill="#e53df2"/>
+<path d="M 493.30 116.52 A 42.82 42.82 0 0 1 510.47 108.25 L 515.56 130.55 A 19.95 19.95 0 0 0 507.56 134.40 Z" fill="#f2633d"/>
+<path d="M 510.47 108.25 A 42.82 42.82 0 0 1 529.53 108.25 L 524.44 130.55 A 19.95 19.95 0 0 0 515.56 130.55 Z" fill="#97f23d"/>
+<path d="M 529.53 108.25 A 42.82 42.82 0 0 1 546.70 116.52 L 532.44 134.40 A 19.95 19.95 0 0 0 524.44 130.55 Z" fill="#3df2cb"/>
+<path d="M 546.70 116.52 A 42.82 42.82 0 0 1 558.58 131.42 L 537.97 141.35 A 19.95 19.95 0 0 0 532.44 134.40 Z" fill="#4a3df2"/>
+<path d="M 558.58 131.42 A 42.82 42.82 0 0 1 562.82 150.00 L 539.95 150.00 A 19.95 19.95 0 0 0 537.97 141.35 Z" fill="#f23db1"/>
+<text x="520.0" y="220.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">l = 3</text>
+<text x="604.0" y="150.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#9aa0c3" font-weight="400">more twist →</text>
+<text x="56.0" y="296.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#9aa0c3" font-weight="400">radial rings (p)</text>
+<circle cx="100" cy="360" r="52" fill="#171b30"/>
+<path d="M 141.40 360.00 A 41.40 41.40 0 1 1 141.40 359.96 L 100.00 360.00 A 0.00 0.00 0 1 0 100.00 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<text x="100.0" y="430.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">p = 0</text>
+<circle cx="240" cy="360" r="52" fill="#171b30"/>
+<path d="M 260.70 360.00 A 20.70 20.70 0 1 1 260.70 359.98 L 240.00 360.00 A 0.00 0.00 0 1 0 240.00 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<path d="M 283.70 360.00 A 43.70 43.70 0 1 1 283.70 359.96 L 267.14 359.97 A 27.14 27.14 0 1 0 267.14 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<text x="240.0" y="430.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">p = 1</text>
+<circle cx="380" cy="360" r="52" fill="#171b30"/>
+<path d="M 393.80 360.00 A 13.80 13.80 0 1 1 393.80 359.99 L 380.00 360.00 A 0.00 0.00 0 1 0 380.00 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<path d="M 409.13 360.00 A 29.13 29.13 0 1 1 409.13 359.97 L 398.09 359.98 A 18.09 18.09 0 1 0 398.09 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<path d="M 424.47 360.00 A 44.47 44.47 0 1 1 424.47 359.96 L 413.43 359.97 A 33.43 33.43 0 1 0 413.43 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<text x="380.0" y="430.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">p = 2</text>
+<circle cx="520" cy="360" r="52" fill="#171b30"/>
+<path d="M 530.35 360.00 A 10.35 10.35 0 1 1 530.35 359.99 L 520.00 360.00 A 0.00 0.00 0 1 0 520.00 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<path d="M 541.85 360.00 A 21.85 21.85 0 1 1 541.85 359.98 L 533.57 359.99 A 13.57 13.57 0 1 0 533.57 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<path d="M 553.35 360.00 A 33.35 33.35 0 1 1 553.35 359.97 L 545.07 359.97 A 25.07 25.07 0 1 0 545.07 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<path d="M 564.85 360.00 A 44.85 44.85 0 1 1 564.85 359.96 L 556.57 359.96 A 36.57 36.57 0 1 0 556.57 360.00 Z" fill="#7c86c9" fill-opacity="0.85"/>
+<text x="520.0" y="430.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">p = 3</text>
+<text x="604.0" y="360.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" fill="#9aa0c3" font-weight="400">more rings →</text>
+<text x="360.0" y="502.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#9aa0c3" font-weight="400">color cycling round = orbital twist  ·  ring count = radial index  ·  darker core = more twist</text>
+</svg>
