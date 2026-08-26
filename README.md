@@ -48,6 +48,8 @@ The real technical foundations this project builds on and combines:
 - Lib & Bromberg, *"Resource-efficient photonic quantum computation with high-dimensional cluster states,"* Nature Photonics (2024) ;  the closest existing precedent to the eventual goal.
 
 ---
+# Up Next: [The Build](BUILD.md)
+
 
 ## And for the initiated
 
@@ -55,5 +57,3 @@ The real technical foundations this project builds on and combines:
 
 One photon carries a qudit in the joint (OAM, radial) Laguerre-Gauss mode space ;  dimension d = (l_max+1)(p_max+1). Bundle g = (log₂ d) logical qubits per physical qudit (Gao/Huber compression). Gates entirely inside one bundle are free, local, near-unit-fidelity single-qudit operations. Gates that cross bundles use the Apurav/Singh multi-level CZ, built from Selective Mode Routers, at ~1/8 postselected success. Wire enough of these together and you have a cluster state; adaptive measurements on it, read through the tessarine/geometric-algebra (Cl(4,0)) formalism already chosen, run the Raussendorf–Briegel one-way computation.
 
-
-*This README is a living document and will be updated as the build progresses.*
