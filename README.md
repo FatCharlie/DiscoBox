@@ -1,13 +1,10 @@
 # DiscoBox
 
-A 9-qubit computer you can build at home
-
-*An independent, from-scratch attempt — not a lab, not a company, just curiosity and an optical table.*
+A 9 qubit quantum computer you can build at home.
 
 ## What this is
 
-This is an attempt to build a small working piece of a quantum computer, using particles of light (photons) shaped in unusually complex ways. It's a personal project, not affiliated with a university or company — built to genuinely understand how this technology works by actually building it.
-
+This is an attempt to build a quantum computer (we're working up to it in phases), using particles of light (photons) shaped in unusually complex ways. It's a personal project, not affiliated with a university or company 
 
 ![The basic setup: a pump laser feeds a crystal, where a photon pair is born and splits toward two light-shaping devices and detectors](images/basic-setup.svg)
 
@@ -33,18 +30,14 @@ None of the core physics here is new or original to this project. It's an attemp
 
 Worth being upfront about: professional, funded labs have already built more advanced versions of pieces of this. That's fine, and it isn't really the point. The goal here isn't to be first or to outdo people with a real optics lab and a research budget — it's to build a working piece of this by hand, from parts, and understand every step of it. Nobody builds a backyard telescope and gives up because professional observatories already exist.
 
-## Where things stand right now
-
-Early days — currently in the design and parts-sourcing phase for the first real milestone: a single working two-photon logic gate, built on this richer-particle encoding. Not a full computer yet. A solid, independently verifiable first building block.
-
 ## What's next
 
-1. Get that first two-photon gate working and verified.
+1. Get the first two-photon gate working and verified.
 2. Combine a handful of those gates into a genuinely connected quantum resource (a "cluster state").
 3. Use that resource to run an actual small computation.
 4. Scale up from there — including honestly reassessing, at each step, whether the current approach still makes sense or needs to change.
 
-## Further reading, for the curious
+## Further reading
 
 The real technical foundations this project builds on and combines:
 
@@ -56,8 +49,11 @@ The real technical foundations this project builds on and combines:
 
 ---
 
-Questions, skepticism, and pointers to relevant work are all welcome.
+## And for the initiated
 
-*— [your name here]*
+#### The architecture, stated plainly
+
+One photon carries a qudit in the joint (OAM, radial) Laguerre-Gauss mode space — dimension d = (l_max+1)(p_max+1). Bundle g = (log₂ d) logical qubits per physical qudit (Gao/Huber compression). Gates entirely inside one bundle are free, local, near-unit-fidelity single-qudit operations. Gates that cross bundles use the Apurav/Singh multi-level CZ, built from Selective Mode Routers, at ~1/8 postselected success. Wire enough of these together and you have a cluster state; adaptive measurements on it, read through the tessarine/geometric-algebra (Cl(4,0)) formalism already chosen, run the Raussendorf–Briegel one-way computation.
+
 
 *This README is a living document and will be updated as the build progresses.*
