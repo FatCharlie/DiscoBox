@@ -19,7 +19,7 @@ Why bother? Because the hardest part of building a quantum computer out of light
 
 ![Two rows of small mode patterns: orbital twist growing from none to a triple twist, and radial rings growing from one ring to four](images/oam-radial-modes.svg)
 
-## This stands on real, recent research ;  not a solo invention
+## The recent research that makes it possible
 
 None of the core physics here is new or original to this project. It's an attempt to combine and personally rebuild pieces of real, published research:
 
