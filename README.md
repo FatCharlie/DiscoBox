@@ -4,7 +4,7 @@ A 9 qubit quantum computer you can build at home.
 
 ## What this is
 
-This is an attempt to build a quantum computer (we're working up to it in phases), using particles of light (photons) shaped in unusually complex ways. It's a personal project, not affiliated with a university or company 
+This is a build for a photonic quantum computer , using particles of light (photons) shaped in unusually complex ways. It's a personal project, not affiliated with a university or company 
 
 ![The basic setup: a pump laser feeds a crystal, where a photon pair is born and splits toward two light-shaping devices and detectors](images/basic-setup.svg)
 
