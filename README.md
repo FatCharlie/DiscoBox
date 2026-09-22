@@ -39,6 +39,7 @@ But this gives you 4 usable qubits per photon. If you want to build a full GHZ s
 
  
 ## References
+- Lib & Bromberg, Resource-efficient photonic quantum computation with high-dimensional cluster states, *Nature Photonics* 2024 [https://www.researchgate.net/publication/384072569_Resource-efficient_photonic_quantum_computation_with_high-dimensional_cluster_states](https://www.researchgate.net/publication/384072569_Resource-efficient_photonic_quantum_computation_with_high-dimensional_cluster_states)
 - Lib, Sulimany & Bromberg, Processing Entangled Photons in High Dimensions with a Programmable Light Converter, *Phys. Rev. Applied* 2022. [https://arxiv.org/abs/2108.02258](https://arxiv.org/abs/2108.02258)
 - Brandt et al., High-dimensional quantum gates using full-field spatial modes of photons *Optica* 2020. [https://arxiv.org/abs/1907.13002](https://arxiv.org/abs/1907.13002)
 - He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. *Light Sci. Appl.* 11, 205 (2022). [https://doi.org/10.1038/s41377-022-00897-3](https://doi.org/10.1038/s41377-022-00897-3)
