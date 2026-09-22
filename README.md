@@ -1,6 +1,6 @@
 # DiscoBox
 
-A photonic quantum computer you can build at home, targeting cluster states equivalent to 8 qubits.
+A photonic quantum computer you can build at home, targeting cluster states equivalent to __8 qubits__.
 
 ![Alt text](images/oam-radial-modes.svg)
 
@@ -11,6 +11,14 @@ We're scaling our 405nm-laser-spdc-entagled-photons into high dimensions by twis
 ## Hyper Dimensional Entaglement
 
 Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products** , which is what gives our free gates (free on the same photon).
+![no](images/single_photon_qudit_split.svg)
+
+Cross photon gates get tricky, which also requires a bit of graph work upfront to split the circuit across photons so that interactions can occur for free.
+![yes](images/two_photon_gate_structure.svg)
+
+## Putting it together
+
+We aim our laser into our first SLM/Q-plate batch to physically carve the light into 16 modes we will use as dimensions. It then feeds into our BBO crystal to get our entagled photons. Then fed into the second SLM where we bake the gates directly into the phase. Finally it hits our SPAD detector array, where we register our final output value (1-16)
 
 ## References
 
