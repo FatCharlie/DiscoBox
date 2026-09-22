@@ -1,6 +1,6 @@
 # DiscoBox
 
-A photonic quantum computer you can build at home, targeting cluster states equivalent to __8 qubits__ (and beyond!)
+An open-source photonic quantum computer targeting cluster states equivalent to __8 qubits__ (and beyond!)
 Status: design phase, not yet built.
 
 ## The quick of it  
