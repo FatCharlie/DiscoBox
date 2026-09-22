@@ -20,18 +20,17 @@ $$
 
 We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
-It continues into our Beta Barium Borate (BBO) non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
+We aim into our Beta Barium Borate (BBO) type-ii non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
 
-Seeding the crystal with a pump beam that's already in superposition across our 16 modes (**l&p**--see next section) gives us our full 16-dimensional state space per photon.
+Out photons exit the crystal with opposite phase which we exploit with a phase-beam-splitter, sending photon A down one path and photon B down the other.
 
-It continues into the second Spatial Light Modulator (SLM) where it forms a programmable multi-plane light converter (MPLC), where we write the gates as high-dimensional spatial transformations. (our "program" gets written here and "executed" at the detector). 
 
 Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entangled photon, actually a mapping since the bbo gives us anti-correlation but the agreeing part is what's important).
 
 
 
 
-![simple schematic](images/discobox_simple_schematic.svg)  
+![simple schematic](images/discobox_schematic_white.svg)  
 
 *Note: We probably need a mode sorter before the final SPAD array to translate $\[
 |\ell,p\rangle \longrightarrow |x_i,y_i\rangle
