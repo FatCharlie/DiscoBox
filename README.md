@@ -11,7 +11,7 @@ It continues into our Beta Barium Borate (BBO) non-linear crystal where occasion
 
 It continues into the second Spatial Light Modulator (SLM) where we bake the quantum gates directly into the phase (our "program" gets written here and "executed" at the detector). 
 
-Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entagled photon).
+Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entangled photon).
 
 ![yes](images/simple_setup2.jpg)  
 
@@ -27,7 +27,7 @@ We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions (by di
 Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products** , which is the magic that gives us free gates (free on the same photon).
 ![no](images/single_photon_qudit_split.svg)
 
-Cross photon gates get tricky, which also requires a bit of graph work upfront to split the circuit across photons so that interactions can occur for free.
+Cross photon gates are the expensive kind, since that link is fixed the moment SPDC creates the pair, you can't rearrange it afterward. That's why the graph work happens upfront: you're arranging your circuit so anything that needs to interact lands on registers within the same photon, where it's free, instead of needing a cross-photon gate at all.
 ![yes](images/two_photon_gate_structure.svg)
 
 But this gives you 4 usable qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via a H and two CNOT's you can totally do that. 
@@ -36,6 +36,8 @@ But this gives you 4 usable qubits per photon. If you want to build a full GHZ s
 
 [Build it!](BUILD.md). Confirm the Bell experiments, you can't trust it unless you replicate it yourself.
 
-References
-He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. Light Sci. Appl. 11, 205 (2022). https://doi.org/10.1038/s41377-022-00897-3
-Lib, O. & Bromberg, Y. Resource-efficient photonic quantum computation with high-dimensional cluster states. Nature Photonics 18, 1218–1224 (2024). https://www.nature.com/articles/s41566-024-01524-w
+ 
+## References
+ 
+- He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. *Light Sci. Appl.* 11, 205 (2022). [https://doi.org/10.1038/s41377-022-00897-3](https://doi.org/10.1038/s41377-022-00897-3)
+- Lib, O. & Bromberg, Y. Resource-efficient photonic quantum computation with high-dimensional cluster states. *Nature Photonics* 18, 1218–1224 (2024). [https://www.nature.com/articles/s41566-024-01524-w](https://www.nature.com/articles/s41566-024-01524-w)
