@@ -52,12 +52,12 @@ A 16-dimensional  Hilbert space can be encoded as four logical qubits because \(
 
 Which gives us 4 usable qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via a H and two CNOT's you can totally do that. 
 
-## Quick Math
+## The Math of it
 
 $$
 \begin{aligned}
-ℓ ∈ {−2,−1,+1,+2}\\
-p ∈ {0,1,2,3}
+\ell &\in \{-2,-1,+1,+2\} \\
+p &\in \{0,1,2,3\}
 \end{aligned}
 $$
 
@@ -65,7 +65,7 @@ gives us our physical basis
 
 $$
 \begin{aligned}
-∣ℓ,p⟩
+|\ell,p\rangle
 \end{aligned}
 $$
 
@@ -105,7 +105,8 @@ which our now 16 dimensional Hilbert space decomposes naturally to
 $$
 \begin{aligned}
 \mathcal{H}_{16} &= \mathcal{H}_{\ell,4} \otimes \mathcal{H}_{p,4} \\
-\mathcal{H}_{4} &\cong \mathcal{H}_{2} \otimes \mathcal{H}_{2}
+&\cong (\mathcal{H}_{2} \otimes \mathcal{H}_{2}) \otimes (\mathcal{H}_{2} \otimes \mathcal{H}_{2}) \\
+&\cong \mathcal{H}_{2}^{\otimes 4}
 \end{aligned}
 $$
 
