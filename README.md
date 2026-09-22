@@ -70,7 +70,9 @@ $$
 
 ## The Next Step
 
-[Build it!](BUILD.md). Confirm the Bell experiments, you can't trust it unless you replicate it yourself.
+[Build it!](BUILD.md)  
+
+Confirm the Bell experiments, you can't trust it unless you replicate it yourself.
 
  
 ## References
