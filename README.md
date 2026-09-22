@@ -10,7 +10,7 @@ $$
 \boxed{
 \text{4 OAM DOF}\times\text{4 radial DOF}
 \rightarrow
-16\text{ orthogonal LG modes}
+16\text{ orthogonal modes}
 \rightarrow
 16\text{-dimensional Hilbert space}
 \rightarrow
@@ -20,32 +20,27 @@ $$
 
 We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
-We aim into our Beta Barium Borate (BBO) type-ii non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
+Send it into our Beta Barium Borate (BBO) type-ii non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
 
-Out photons exit the crystal with opposite phase which we exploit with a phase-beam-splitter, sending photon A down one path and photon B down the other.
+Our entangled photons exit the crystal with orthogonal polarization which we exploit with a polarizing beam splitter (PBS), sending photon A down one path and photon B down the other.
+
+Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written via Unitary transformations, and also set the measurement basis before we send it into the fiber. The single mode fiber discards everything but its fundamental mode so we convert whichever mode we're projecting onto into that mode.
+
+Finally each path hits it's own Single Photon Avalanche Diode (SPAD) detector, where we register our final output, which we interpet as a number in the range of 1-16 (1-2^no_qubits).
+
+![simple schematic](images/discobox_schematic_white2.svg)  
 
 
-Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entangled photon, actually a mapping since the bbo gives us anti-correlation but the agreeing part is what's important).
-
-
-
-
-![simple schematic](images/discobox_schematic_white.svg)  
-
-*Note: We probably need a mode sorter before the final SPAD array to translate $\[
-|\ell,p\rangle \longrightarrow |x_i,y_i\rangle
-\] $ 
-
-None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions and thus effective qubit size relatively easily by swapping in better hardware. 
+None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by simply swapping in better hardware. 
 
 ## Let's make some dimensions
 ![oam-radoal-modes](images/oam-radial-modes.svg)
 
-We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) with our Spatial Light Modulators and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions (**l*p**)  in preparation for the next step, which I normally say with jazz hands: ***hyper-dimensional-spatial-entanglement*** (the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) call it "high-dimensional spatial encoding of cluster states")
+We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) with our Spatial Light Modulators and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions (**l*p**)  in preparation for the next step which must be said with jazz hands: ***hyper-dimensional-spatial-entanglement*** (the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) call it "high-dimensional spatial encoding of cluster states")
 
 ## Hyper Dimensional Spatial Entanglement
 
-Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products**. <u>This is the part that gives us deterministic intra-photon gates without requiring photon on photon interaction.</u>
+Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via tensor products. <u>**This is the part that gives us intra-photon gates without requiring photon on photon interaction.**</u>
 
 ![single-qudit-split](images/single_photon_qudit_split.svg)
 
@@ -53,10 +48,12 @@ Cross photon gates can't be rearranged after SPDC. The graph work is arranging t
 
 ![two-photon-gate-structure](images/two_photon_gate_structure.svg)
 
-A 16-dimensional  Hilbert space can be encoded as four logical qubits because \(16=2^4\). Lib & Bromberg experimentally encode four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
+$\small\textit{Lib and Bromberg have already experimentally encoded four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
+}$
 
-Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. 
-## The Math of it
+Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. have already demonstrated exactly this experimentally: a two-qubit CNOT gate using the OAM and radial degrees of freedom on a _single_ photon.
+
+## The math of it
 
 $$
 \begin{aligned}
