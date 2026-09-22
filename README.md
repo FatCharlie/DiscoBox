@@ -7,11 +7,11 @@ Status: design phase, not yet built.
 
 We aim our 405nm laser into our Spatial Light Modulator (a hologram) to physically carve the light into 16 unique modes we will use as dimensions (the OAM twist and the radials pictured in the next section).
 
-It continues into our Beta Barium Borate (BBO) non-linear crystal where 1-in-10^9 become entangled via Spontaneous Parametric Down Conversion (SPDC). Seeding the crystal with a pump beam that's already in superposition across our 16 modes (**l&p**) gives us our full 16-dimensional joint state space per photon.
+It continues into our Beta Barium Borate (BBO) non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). Seeding the crystal with a pump beam that's already in superposition across our 16 modes (**l&p**) gives us our full 16-dimensional state space per photon.
 
 It continues into the second Spatial Light Modulator (SLM) where we bake the quantum gates directly into the phase (our "program" gets written here and "executed" at the detector). 
 
-Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (a number between 1-16) as a coincidence click.
+Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entagled photon).
 
 ![yes](images/simple_setup2.jpg)  
 
@@ -34,11 +34,8 @@ But this gives you 4 usable qubits per photon. If you want to build a full GHZ s
 
 ## The Next Step
 
-Get a job to save up the money [to build this thing](BUILD.md)
+[Build it!](BUILD.md). Confirm the Bell experiments, you can't trust it unless you replicate it yourself.
 
-
-
-## References
-
-- He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. *Light Sci. Appl.* 11, 205 (2022). [https://doi.org/10.1038/s41377-022-0097-3](https://doi.org/10.1038/s41377-022-00897-3)
-- Lib, O. & Bromberg, Y. Resource-efficient photonic quantum computation with high-dimensional cluster states. *Nature Photonics* 18, 1218–1224 (2024). [https://www.nature.com/articles/s41566-024-01524-w](https://www.nature.com/articles/s41566-024-01524-w)
+References
+He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. Light Sci. Appl. 11, 205 (2022). https://doi.org/10.1038/s41377-022-00897-3
+Lib, O. & Bromberg, Y. Resource-efficient photonic quantum computation with high-dimensional cluster states. Nature Photonics 18, 1218–1224 (2024). https://www.nature.com/articles/s41566-024-01524-w
