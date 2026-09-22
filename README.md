@@ -37,13 +37,41 @@ Which gives you 4 usable qubits per photon. If you want to build a full GHZ stat
 
 ## Quick Math
 
-ℓ ∈ {−2,−1,+1,+2}
-
+$$
+\begin{aligned}
+ℓ ∈ {−2,−1,+1,+2}\\
 p ∈ {0,1,2,3}
+\end{aligned}
+$$
 
-gives us our physical basis ∣ℓ,p⟩ , for 16 orthogonal Laguerre-Gaussian (LG) modes.
+gives us our physical basis
 
-which decomposes naturally to 
+$$
+\begin{aligned}
+∣ℓ,p⟩
+\end{aligned}
+$$
+
+for 16 orthogonal Laguerre-Gaussian (LG) modes. Now we prime our pump
+
+$$
+\begin{aligned}
+∣ψpump​⟩=ℓ,p∑​cℓp​∣ℓ,p⟩
+\end{aligned}
+$$
+
+And put it through the crystal to get our ideal biphoton correlation:
+
+$$
+|\Psi\rangle =
+\frac{1}{4}
+\sum_{\ell \in \{-2,-1,+1,+2\}}
+\sum_{p=0}^{3}
+|\ell,p\rangle_A
+|-\ell,p\rangle_B
+$$
+
+which our now 16 dimensional Hilbert space decomposes naturally to 
 
 H_16 ​= Hℓ_4​ ⊗ Hp_4
 
@@ -57,17 +85,7 @@ Which gets us from our 16-dimensional Hilbert space down to 4 2d qubits. So our 
 #### photon 2
 ∣ℓ,p⟩ → ∣q8​q7​q6​q5​⟩
 
-That mapping is meaningful because our type-ii spdc spits out anti-correlated photons, so 1 matches to 8, 2 to 7 etc. Which gives us our ideal biphoton correlation:
-
-$$
-|\Psi\rangle =
-\frac{1}{4}
-\sum_{\ell \in \{-2,-1,+1,+2\}}
-\sum_{p=0}^{3}
-|\ell,p\rangle_A
-|-\ell,p\rangle_B
-$$
-
+That mapping is meaningful because our type-ii spdc spits out anti-correlated photons, so 1 matches to 8, 2 to 7 etc. 
 ## The Next Step
 
 [Build it!](BUILD.md)  
