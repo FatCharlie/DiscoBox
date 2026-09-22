@@ -27,7 +27,8 @@ We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions (by di
 Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products** , which is the magic that gives us free gates (free on the same photon).
 ![no](images/single_photon_qudit_split.svg)
 
-Cross photon gates are the expensive kind, since that link is fixed the moment SPDC creates the pair, you can't rearrange it afterward. That's why the graph work happens upfront: you're arranging your circuit so anything that needs to interact lands on registers within the same photon, where it's free, instead of needing a cross-photon gate at all.
+Cross photon gates can't be rearranged after SPDC. That's why the graph work happens upfront: you're arranging your circuit so anything that needs to interact lands on registers within the same photon, where it's free, instead of needing a cross-photon gate at all.
+
 ![yes](images/two_photon_gate_structure.svg)
 
 But this gives you 4 usable qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via a H and two CNOT's you can totally do that. 
@@ -38,6 +39,7 @@ But this gives you 4 usable qubits per photon. If you want to build a full GHZ s
 
  
 ## References
- 
+- Lib, Sulimany & Bromberg, Processing Entangled Photons in High Dimensions with a Programmable Light Converter, *Phys. Rev. Applied* 2022. [https://arxiv.org/abs/2108.02258](https://arxiv.org/abs/2108.02258)
+- Brandt et al., High-dimensional quantum gates using full-field spatial modes of photons *Optica* 2020. [https://arxiv.org/abs/1907.13002](https://arxiv.org/abs/1907.13002)
 - He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. *Light Sci. Appl.* 11, 205 (2022). [https://doi.org/10.1038/s41377-022-00897-3](https://doi.org/10.1038/s41377-022-00897-3)
 - Lib, O. & Bromberg, Y. Resource-efficient photonic quantum computation with high-dimensional cluster states. *Nature Photonics* 18, 1218–1224 (2024). [https://www.nature.com/articles/s41566-024-01524-w](https://www.nature.com/articles/s41566-024-01524-w)
