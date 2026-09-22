@@ -37,14 +37,14 @@ Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where w
 
 None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions and thus effective qubit size relatively easily by swapping in better hardware. 
 
-## Let's make us some dimensions
+## Let's make some dimensions
 ![Alt text](images/oam-radial-modes.svg)
 
 We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) with our Spatial Light Modulators and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions (**l*p**)  in preparation for the next step, which I normally say with jazz hands: ***hyper-dimensional-spatial-entanglement*** (the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) call it "high-dimensional spatial encoding of cluster states")
 
 ## Hyper Dimensional Spatial Entanglement
 
-Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products**. This is the part that gives us deterministic intra-photon gates without requiring photon on photon interaction.
+Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products**. <u>This is the part that gives us deterministic intra-photon gates without requiring photon on photon interaction.</u>
 
 ![no](images/single_photon_qudit_split.svg)
 
@@ -131,6 +131,13 @@ flowchart TD
     F --> G[8-qubit cluster]
 ```
 Then finally, confirm the Bell experiments. You can't trust it unless you replicate it yourself.
+
+# Notes
+I'm glossing over some real hurdles, a big one being the radial creation and measurement, which the authors below have also flagged. Hoping to do what Valencia et al. and create a larger mode size but only keep a subsection where the noise is less likely to happen
+
+<img width="1800" height="1100" alt="image" src="https://github.com/user-attachments/assets/3cf5148f-f9eb-4073-8f31-5deccd0fd4a7" />
+
+ Looking at the noise we can see p > 2 has the greatest cross-talk potential so we will widen l before trying p.
 
  
 ## References
