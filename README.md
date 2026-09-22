@@ -82,12 +82,14 @@ $$
 And put it through the crystal to get our idealized biphoton correlation:
 
 $$
+\[
 |\Psi\rangle =
 \frac{1}{4}
-\sum_{\ell \in \{-2,-1,+1,+2\}}
-\sum_{p=0}^{3}
+\sum_{\ell}
+\sum_{p}
 |\ell,p\rangle_A
 |-\ell,p\rangle_B
+\]
 $$
 
 
@@ -104,7 +106,7 @@ $$
 
 We reverse the mapping on photon B so that the anti-correlations coming out of the BBO crystal form pairwise connections 1->8, 2->7, 3->6 etc.
 
-which our now 16 dimensional Hilbert space decomposes naturally to 
+which our now 16 dimensional Hilbert space decomposes to 
 
 $$
 \begin{aligned}
@@ -114,7 +116,7 @@ $$
 \end{aligned}
 $$
 
-Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4, 2d qubits.
+Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4, 2d logical qubits.
 
 ## The Next Step
 
