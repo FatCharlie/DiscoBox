@@ -18,7 +18,7 @@ None of this is original work I'm combining Forbes/He/Shen's dimension scaling a
 ## Lets make some dimensions
 ![Alt text](images/oam-radial-modes.svg)
 
-We're scaling our 405nm-laser-spdc-entagled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4** total) with our Spatial Light Modulators and altering the radials (**p=4**)  for 16 usable dimensions (**l*p**)  in preparation for the next step, <font size="2em">**hyper-dimensional-entaglement**</font> ( I'm calling it that - the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) called it "high-dimensional spatial encoding of cluster states")
+We're scaling our 405nm-laser-spdc-entagled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4** total) with our Spatial Light Modulators and altering the radials (**p=4**)  for 16 usable dimensions (**l*p**)  in preparation for the next step, which I normally say with jazz hands <font size="2em">**hyper-dimensional-entanglement**</font> (the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) call it "high-dimensional spatial encoding of cluster states")
 
 ## Hyper Dimensional Entaglement
 
