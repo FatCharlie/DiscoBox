@@ -38,7 +38,7 @@ Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where w
 None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions and thus effective qubit size relatively easily by swapping in better hardware. 
 
 ## Let's make some dimensions
-![Alt text](images/oam-radial-modes.svg)
+![oam-radoal-modes](images/oam-radial-modes.svg)
 
 We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) with our Spatial Light Modulators and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions (**l*p**)  in preparation for the next step, which I normally say with jazz hands: ***hyper-dimensional-spatial-entanglement*** (the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) call it "high-dimensional spatial encoding of cluster states")
 
@@ -46,16 +46,15 @@ We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twi
 
 Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products**. <u>This is the part that gives us deterministic intra-photon gates without requiring photon on photon interaction.</u>
 
-![no](images/single_photon_qudit_split.svg)
+![single-qudit-split](images/single_photon_qudit_split.svg)
 
 Cross photon gates can't be rearranged after SPDC. The graph work is arranging the circuit so anything that needs to interact lands on registers within the same photon where it's free, instead of needing a cross-photon gate.
 
-![yes](images/two_photon_gate_structure.svg)
+![two-photon-gate-structure](images/two_photon_gate_structure.svg)
 
 A 16-dimensional  Hilbert space can be encoded as four logical qubits because \(16=2^4\). Lib & Bromberg experimentally encode four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
 
 Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. 
-
 ## The Math of it
 
 $$
@@ -68,31 +67,45 @@ $$
 gives us our physical basis
 
 $$
-\begin{aligned}
 |\ell,p\rangle
-\end{aligned}
 $$
 
-for 16 orthogonal Laguerre-Gaussian (LG) modes. Now we prime our pump
+Start with a clean transverse wave.
 
 $$
-|\psi_{\text{pump}}\rangle = \sum_{\ell,p} c_{\ell,p} |\ell,p\rangle
+|\psi_{\text{pump}}\rangle = |0,0\rangle
 $$
 
-And put it through the crystal to get our idealized biphoton correlation:
+Using a Type-II BBO crystal gives us OAM that's perfectly anti-correlated:
 
 $$
-\[
-|\Psi\rangle =
+\ell_A + \ell_B = \ell_{\text{pump}} = 0 \quad\Rightarrow\quad \ell_A = -\ell_B
+$$
+
+The radial (p) correlation has no equivalent conservation law. It's set by the overlap between the pump's radial profile and the crystal's phase-matching function, and is only approximately diagonal:
+
+$$
+p_A \approx p_B \quad (\text{approximate, not conserved})
+$$
+
+Making our idealized biphoton correlation:
+
+$$
+|\Psi_{\text{ideal}}\rangle =
 \frac{1}{4}
 \sum_{\ell}
 \sum_{p}
 |\ell,p\rangle_A
 |-\ell,p\rangle_B
-\]
 $$
 
+The state we actually generate departs from this by a fidelity term :
 
+$$
+F = |\langle \Psi_{\text{ideal}} \mid \Psi_{\text{actual}} \rangle|^2
+$$
+
+The best demonstrated benchmark for this is around .85 fidelity.
 
 #### photon A
 $$
@@ -104,9 +117,9 @@ $$
 |\ell,p\rangle \rightarrow |q_8 q_7 q_6 q_5\rangle
 $$
 
-We reverse the mapping on photon B so that the anti-correlations coming out of the BBO crystal form pairwise connections 1->8, 2->7, 3->6 etc.
+We reverse the mapping (defined against $|\Psi_{\text{ideal}}\rangle$) on photon B so that the anti-correlations coming out of the BBO crystal form pairwise connections 1->8, 2->7, 3->6 etc.
 
-which our now 16 dimensional Hilbert space decomposes to 
+which our now 16 dimensional Hilbert space decomposes to
 
 $$
 \begin{aligned}
@@ -116,7 +129,7 @@ $$
 \end{aligned}
 $$
 
-Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4, 2d logical qubits.
+Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4 logical qubits.
 
 ## The Next Step
 
@@ -130,12 +143,11 @@ flowchart TD
     E --> F[Logical encoding]
     F --> G[8-qubit cluster]
 ```
-Then finally, confirm the Bell experiments. You can't trust it unless you replicate it yourself.
 
 # Notes
 I'm glossing over some real hurdles, a big one being the radial creation and measurement, which the authors below have also flagged. Hoping to do what Valencia et al. and create a larger mode size but only keep a subsection where the noise is less likely to happen
 
-<img width="1800" height="1100" alt="image" src="https://github.com/user-attachments/assets/3cf5148f-f9eb-4073-8f31-5deccd0fd4a7" />
+![crosstalk-by-mode-group-barchart](images/discobox_mode_group_crosstalk.png)
 
  Looking at the noise we can see p > 2 has the greatest cross-talk potential so we will widen l before trying p.
 
