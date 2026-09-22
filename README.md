@@ -4,14 +4,30 @@ A photonic quantum computer you can build at home, targeting cluster states equi
 Status: design phase, not yet built.
 
 ## The quick of it  
+The architecture can be described as:
 
-We aim our 405nm laser into our Spatial Light Modulator (a hologram) to physically carve the light into 16 unique modes we will use as dimensions (the OAM twist and the radials pictured in the next section).
+$$
+\boxed{
+\text{OAM DOF}\times\text{radial DOF}
+\rightarrow
+16\text{ orthogonal LG modes}
+\rightarrow
+16\text{-dimensional Hilbert space}
+\rightarrow
+4\text{ logical qubits}
+}
+$$
+
+We aim our 405nm laser into our Spatial Light Modulator (a hologram) to prepare a coherent superposition of 16 selected Laguerre-Gaussian (LG) spatial modes (the OAM twists and the radials pictured in the next section).
 
 It continues into our Beta Barium Borate (BBO) non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). Seeding the crystal with a pump beam that's already in superposition across our 16 modes (**l&p**--see next section) gives us our full 16-dimensional state space per photon.
 
-It continues into the second Spatial Light Modulator (SLM) where we bake the quantum gates directly into the phase (our "program" gets written here and "executed" at the detector). 
+It continues into the second Spatial Light Modulator (SLM) where it forms a programmable multi-plane light converter (MPLC), where we write the gates as high-dimensional spatial transformations. (our "program" gets written here and "executed" at the detector). 
 
 Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entangled photon, actually a mapping since the bbo gives us anti-correlation but the agreeing part is what's important).
+
+
+
 
 ![yes](images/simple_setup2.jpg)  
 
@@ -24,7 +40,8 @@ We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions (by di
 
 ## Hyper Dimensional Entanglement
 
-Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products** , which is the magic that gives us free gates (free on the same photon).
+Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products**. This is the part that gives us deterministic intra-photon gates without requiring photon on photon interaction.
+
 ![no](images/single_photon_qudit_split.svg)
 
 Cross photon gates can't be rearranged after SPDC. The graph work is arranging the circuit so anything that needs to interact lands on registers within the same photon where it's free, instead of needing a cross-photon gate.
@@ -60,7 +77,7 @@ $$
 \end{aligned}
 $$
 
-And put it through the crystal to get our ideal biphoton correlation:
+And put it through the crystal to get our idealized biphoton correlation:
 
 $$
 |\Psi\rangle =
@@ -71,26 +88,61 @@ $$
 |-\ell,p\rangle_B
 $$
 
-which our now 16 dimensional Hilbert space decomposes naturally to 
 
-H_16 ​= Hℓ_4​ ⊗ Hp_4
 
-H_4​ ≅ H_2 ​⊗ H_2
-
-Which gets us from our 16-dimensional Hilbert space down to 4 2d qubits. So our mapping becomes
-
-#### photon 1
+#### photon A
 ∣ℓ,p⟩ → ∣q1​q2​q3​q4​⟩
 
-#### photon 2
+#### photon B
 ∣ℓ,p⟩ → ∣q8​q7​q6​q5​⟩
 
-That mapping is meaningful because our type-ii spdc spits out anti-correlated photons, so 1 matches to 8, 2 to 7 etc. 
+We reverse the mapping on photon B so that the anti-correlations coming out of the BBO crystal form pairwise connections 1->8, 2->7, 3->6 etc.
+
+which our now 16 dimensional Hilbert space decomposes naturally to 
+
+$$
+\begin{aligned}
+H16​=Hℓ,4​⊗Hp,4​\\
+H4​≅H2​⊗H2​\\
+\end{aligned}
+$$
+
+Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4, 2d qubits.
+
 ## The Next Step
 
-[Build it!](BUILD.md)  
+We're going to do this in stages:
 
-Confirm the Bell experiments, you can't trust it unless you replicate it yourself.
+<div align="center" style="border: 1px solid #FFFFFF; ">
+16 LG modes
+      
+   ↓
+   
+SPDC
+
+   ↓
+      
+measure 16 × 16 coincidence matrix
+   
+   ↓
+   
+verify ℓA = −ℓB and approximate pA = pB
+   
+   ↓
+   
+16D biphoton state
+   
+   ↓
+   
+logical encoding
+   
+   ↓
+   
+8-qubit cluster
+
+</div>
+
+Then finally, confirm the Bell experiments. You can't trust it unless you replicate it yourself.
 
  
 ## References
