@@ -11,11 +11,11 @@ It continues into our Beta Barium Borate (BBO) non-linear crystal where occasion
 
 It continues into the second Spatial Light Modulator (SLM) where we bake the quantum gates directly into the phase (our "program" gets written here and "executed" at the detector). 
 
-Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entangled photon).
+Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where we register our final output (an agreeing pair of numbers between 1-16, one per entangled photon, actually a mapping since the bbo gives us anti-correlation but the agreeing part is what's important).
 
 ![yes](images/simple_setup2.jpg)  
 
-None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib&Bromberg's qudit partitioning, with the hopes that you can scale dimensions and thus effective qubit size relatively easy with better hardware. 
+None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions and thus effective qubit size relatively easily by swapping in better hardware. 
 
 ## Let's make us some dimensions
 ![Alt text](images/oam-radial-modes.svg)
@@ -34,6 +34,39 @@ Cross photon gates can't be rearranged after SPDC. The graph work is arranging t
 A 16-dimensional  Hilbert space can be encoded as four logical qubits because \(16=2^4\). Lib & Bromberg experimentally encode four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
 
 Which gives you 4 usable qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via a H and two CNOT's you can totally do that. 
+
+## Quick Math
+
+ℓ ∈ {−2,−1,+1,+2}
+
+p ∈ {0,1,2,3}
+
+gives us our physical basis ∣ℓ,p⟩ , for 16 orthogonal Laguerre-Gaussian (LG) modes.
+
+which decomposes naturally to 
+
+H_16 ​= Hℓ_4​ ⊗ Hp_4
+
+H_4​ ≅ H_2 ​⊗ H_2
+
+Which gets us from our 16-dimensional Hilbert space down to 4 2d qubits. So our mapping becomes
+
+#### photon 1
+∣ℓ,p⟩ → ∣q1​q2​q3​q4​⟩
+
+#### photon 2
+∣ℓ,p⟩ → ∣q8​q7​q6​q5​⟩
+
+That mapping is meaningful because our type-ii spdc spits out anti-correlated photons, so 1 matches to 8, 2 to 7 etc. Which gives us our ideal biphoton correlation:
+
+$$
+|\Psi\rangle =
+\frac{1}{4}
+\sum_{\ell \in \{-2,-1,+1,+2\}}
+\sum_{p=0}^{3}
+|\ell,p\rangle_A
+|-\ell,p\rangle_B
+$$
 
 ## The Next Step
 
