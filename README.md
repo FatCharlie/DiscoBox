@@ -3,7 +3,7 @@
 A photonic quantum computer you can build at home, achieving cluster states equivalent to __8 qubits__ (and beyond!)
 
 ## The quick of it  
-
+![yes](images/simple_setup.jpg)
 We aim our 405nm laser into our Spatial Light Modulator (a hologram) to physically carve the light into 16 unique modes we will use as dimensions (the OAM twist and the radials pictured below).
 
 It continues into our Beta Barium Borate(BBO) non-linear crystal to get our entanglement (1 in 1 billion via Spontaneous Parametric Down Conversion).
