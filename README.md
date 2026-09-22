@@ -18,9 +18,11 @@ $$
 }
 $$
 
-We aim our 405nm laser into our Spatial Light Modulator (a hologram) to prepare a coherent superposition of 16 selected Laguerre-Gaussian (LG) spatial modes (the OAM twists and the radials pictured in the next section).
+We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
-It continues into our Beta Barium Borate (BBO) non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). Seeding the crystal with a pump beam that's already in superposition across our 16 modes (**l&p**--see next section) gives us our full 16-dimensional state space per photon.
+It continues into our Beta Barium Borate (BBO) non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
+
+Seeding the crystal with a pump beam that's already in superposition across our 16 modes (**l&p**--see next section) gives us our full 16-dimensional state space per photon.
 
 It continues into the second Spatial Light Modulator (SLM) where it forms a programmable multi-plane light converter (MPLC), where we write the gates as high-dimensional spatial transformations. (our "program" gets written here and "executed" at the detector). 
 
@@ -29,7 +31,7 @@ Finally it hits our Single Photon Avalanche Diode (SPAD) detector array, where w
 
 
 
-![yes](images/simple_setup2.jpg)  
+![simple schematic](images/discobox_simple_schematic.svg)  
 
 *Note: We probably need a mode sorter before the final SPAD array to translate $\[
 |\ell,p\rangle \longrightarrow |x_i,y_i\rangle
