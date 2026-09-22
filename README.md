@@ -1,6 +1,6 @@
 # DiscoBox
 
-A photonic quantum computer you can build at home, targeting cluster states equivalent to __8 qubits__.
+A photonic quantum computer you can build at home, achieving cluster states equivalent to __8 qubits__ (and beyond!)
 
 ## The quick of it  
 
@@ -27,9 +27,9 @@ Take our 16d Hilbert space we just created and partition it into "registers" whe
 Cross photon gates get tricky, which also requires a bit of graph work upfront to split the circuit across photons so that interactions can occur for free.
 ![yes](images/two_photon_gate_structure.svg)
 
-## Putting it together
+## The Full Picture
+![yes](images/full_setup.jpg)
 
-We aim our laser into our first SLM/Q-plate batch to physically carve the light into 16 modes we will use as dimensions. It then feeds into our BBO crystal to get our entagled photons. Then fed into the second SLM where we bake the gates directly into the phase. Finally it hits our SPAD detector array, where we register our final output value (1-16)
 
 ## References
 
