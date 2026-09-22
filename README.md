@@ -27,11 +27,13 @@ We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions (by di
 Take our 16d Hilbert space we just created and partition it into "registers" where dimension=2 (a traditional qubit) which we connect via **tensor products** , which is the magic that gives us free gates (free on the same photon).
 ![no](images/single_photon_qudit_split.svg)
 
-Cross photon gates can't be rearranged after SPDC. That's why the graph work happens upfront: you're arranging your circuit so anything that needs to interact lands on registers within the same photon, where it's free, instead of needing a cross-photon gate at all.
+Cross photon gates can't be rearranged after SPDC. The graph work is arranging the circuit so anything that needs to interact lands on registers within the same photon where it's free, instead of needing a cross-photon gate.
 
 ![yes](images/two_photon_gate_structure.svg)
 
-But this gives you 4 usable qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via a H and two CNOT's you can totally do that. 
+A 16-dimensional  Hilbert space can be encoded as four logical qubits because \(16=2^4\). Lib & Bromberg experimentally encode four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
+
+Which gives you 4 usable qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via a H and two CNOT's you can totally do that. 
 
 ## The Next Step
 
