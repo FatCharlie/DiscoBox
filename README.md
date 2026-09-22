@@ -8,7 +8,7 @@ The architecture can be described as:
 
 $$
 \boxed{
-\text{OAM DOF}\times\text{radial DOF}
+\text{4 OAM DOF}\times\text{4 radial DOF}
 \rightarrow
 16\text{ orthogonal LG modes}
 \rightarrow
@@ -82,7 +82,7 @@ $$
 \ell_A + \ell_B = \ell_{\text{pump}} = 0 \quad\Rightarrow\quad \ell_A = -\ell_B
 $$
 
-The radial (p) correlation has no equivalent conservation law. It's set by the overlap between the pump's radial profile and the crystal's phase-matching function, and is only approximately diagonal:
+The radial (p) is set by the overlap between the pumps profile and the crystal's phase-matching function, and is only approximate:
 
 $$
 p_A \approx p_B \quad (\text{approximate, not conserved})
@@ -119,7 +119,7 @@ $$
 
 We reverse the mapping (defined against $|\Psi_{\text{ideal}}\rangle$) on photon B so that the anti-correlations coming out of the BBO crystal form pairwise connections 1->8, 2->7, 3->6 etc.
 
-which our now 16 dimensional Hilbert space decomposes to
+Our now 16 dimensional Hilbert space decomposes to:
 
 $$
 \begin{aligned}
@@ -129,7 +129,7 @@ $$
 \end{aligned}
 $$
 
-Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4 logical qubits.
+Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilbert space down to our 4 logical qubits per photon.
 
 ## The Next Step
 
