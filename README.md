@@ -8,7 +8,7 @@ $\small\text{Status: design phase, not yet built.}$
 
 We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
-Then send it into our Beta Barium Borate (BBO) non-linear crystal where one 405nm photon splits into two 810nm daughters.
+Then send it into our Beta Barium Borate (BBO) non-linear crystal where one 405nm photon occasionally splits into two 810nm daughters.
 
 Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which splits the photons down seperate paths (and some index flipping tricks we will see later).
 
