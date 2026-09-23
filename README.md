@@ -46,7 +46,7 @@ Take our 16d Hilbert space we just created and partition it into "registers" whe
 
 ![single-qudit-split](images/single_photon_qudit_split.svg)
 
-Cross photon gates can't be rearranged after SPDC. The graph work is arranging the circuit so anything that needs to interact lands on registers within the same photon where it's free, instead of needing a cross-photon gate.
+There is some upfront graph work that needs to happen because of the penalty for cross photon gates. 
 
 ![two-photon-gate-structure](images/two_photon_gate_structure.svg)
 
