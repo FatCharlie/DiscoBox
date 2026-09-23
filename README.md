@@ -5,19 +5,6 @@ An open-source photonic quantum computing platform targeting an **8-qubit** clus
 $\small\text{Status: design phase, not yet built.}$
 
 ## The quick of it  
-The architecture can be described as:
-
-$$
-\boxed{
-\text{4 OAM DOF}\times\text{4 radial DOF}
-\rightarrow
-16\text{ orthogonal modes}
-\rightarrow
-16\text{-dimensional Hilbert space}
-\rightarrow
-4\text{ logical qubits}
-}
-$$
 
 We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
@@ -32,6 +19,19 @@ And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detecto
 ![simple schematic](images/discobox_schematic_white2.svg)  
 
 None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by simply swapping in better hardware. 
+The architecture can be described as:
+
+$$
+\boxed{
+\text{4 OAM DOF}\times\text{4 radial DOF}
+\rightarrow
+16\text{ orthogonal modes}
+\rightarrow
+16\text{-dimensional Hilbert space}
+\rightarrow
+4\text{ logical qubits}
+}
+$$
 
 ## Let's make some dimensions
 ![oam-radoal-modes](images/oam-radial-modes-white3.svg)
