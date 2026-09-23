@@ -22,11 +22,11 @@ We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
 Send it into our Beta Barium Borate (BBO) type-ii non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
 
-Our entangled photons exit the crystal with orthogonal polarization which we exploit with a polarizing beam splitter (PBS), sending photon A down one path and photon B down the other.
+Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which both splits the paths and by reflecting off the PBS we physically flip the sign of the reflected photon's OAM index, which is what lets us pair up the anti-correlated ℓ values later (more in the math section).
 
-Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written via Unitary transformations, and also set the measurement basis before we send it into the fiber. The single mode fiber discards everything but its fundamental mode so we convert whichever mode we're projecting onto into that mode.
+Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written (via Unitary transformations), and also set the measurement basis before we send it into the fiber. A single-mode fiber only efficiently couples the fundamental Gaussian mode, so the last hologram is calculated to "flatten" whichever mode we're currently projecting onto back down into that fundamental mode.
 
-Finally each path hits it's own Single Photon Avalanche Diode (SPAD) detector, where we register our final output, which we interpet as a number in the range of 1-16 (1-2^no_qubits).
+Finally each path hits its own Single Photon Avalanche Diode (SPAD) detector. The final "1-16" value per photon isn't read out simultaneously, it's determined by which of the 16 sequential hologram settings on that path's MPLC was active when the click registered.
 
 ![simple schematic](images/discobox_schematic_white2.svg)  
 
@@ -34,7 +34,7 @@ Finally each path hits it's own Single Photon Avalanche Diode (SPAD) detector, w
 None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by simply swapping in better hardware. 
 
 ## Let's make some dimensions
-![oam-radoal-modes](images/dimensions.png)
+![oam-radoal-modes](images/oam-radial-modes.svg)
 
 We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) with our Spatial Light Modulators and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions (**l*p**)  in preparation for the next step which must be said with jazz hands: ***hyper-dimensional-spatial-entanglement*** (the creators [Lib & Bromberg](https://www.nature.com/articles/s41566-024-01524-w) call it "high-dimensional spatial encoding of cluster states")
 
@@ -51,9 +51,9 @@ Cross photon gates can't be rearranged after SPDC. The graph work is arranging t
 $\small\textit{Lib and Bromberg have already experimentally encoded four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
 }$
 
-Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. have already demonstrated exactly this experimentally: a two-qubit CNOT gate using the OAM and radial degrees of freedom on a _single_ photon.
+Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. already demonstrated exactly this kind of intra-photon gate experimentally, a two-qubit CNOT using the OAM and radial degrees of freedom on a single photon, so this isn't just a theoretical trick.
 
-## The math of it
+## The Math of it
 
 $$
 \begin{aligned}
@@ -62,25 +62,25 @@ p &\in \{0,1,2,3\}
 \end{aligned}
 $$
 
-gives us our physical basis
+Gives us our physical basis:
 
 $$
 |\ell,p\rangle
 $$
 
-Start with a clean transverse wave.
+Start with a clean transverse wave:
 
 $$
 |\psi_{\text{pump}}\rangle = |0,0\rangle
 $$
 
-Using a Type-II BBO crystal gives us OAM that's perfectly anti-correlated:
+Our Type-II BBO crystal gives us perfectly anti-correlated OAM:
 
 $$
 \ell_A + \ell_B = \ell_{\text{pump}} = 0 \quad\Rightarrow\quad \ell_A = -\ell_B
 $$
 
-The radial (p) is set by the overlap between the pumps profile and the crystal's phase-matching function, and is only approximate:
+The radial is set by the overlap between the pumps profile and the crystal's phase-matching function and approximate is as good as it gets:
 
 $$
 p_A \approx p_B \quad (\text{approximate, not conserved})
@@ -97,13 +97,13 @@ $$
 |-\ell,p\rangle_B
 $$
 
-The state we actually generate departs from this by a fidelity term :
+We account for noise with a fidelity term :
 
 $$
 F = |\langle \Psi_{\text{ideal}} \mid \Psi_{\text{actual}} \rangle|^2
 $$
 
-The best demonstrated benchmark for this is around .85 fidelity.
+Hoping to get to ~70% eventually.
 
 #### photon A
 $$
@@ -134,12 +134,13 @@ Which gets us from our OAM(l) and Radial(p) degrees of freedom to our 16d Hilber
 We're going to do this in stages:
 ```mermaid
 flowchart TD
-    A[16 LG modes] --> B[SPDC]
-    B --> C[Measure 16 × 16 coincidence matrix]
-    C --> D[Verify ℓA = −ℓB and approximate pA = pB]
-    D --> E[16D biphoton state]
-    E --> F[Logical encoding]
-    F --> G[8-qubit cluster]
+    A[Gaussian pump, l=0 p=0] --> B[SPDC]
+    B --> C[16 LG modes per photon]
+    C --> D[Measure 16 × 16 coincidence matrix]
+    D --> E[Verify ℓA = −ℓB and approximate pA = pB]
+    E --> F[16D biphoton state]
+    F --> G[Logical encoding]
+    G --> H[8-qubit cluster]
 ```
 
 # Notes
@@ -152,8 +153,7 @@ I'm glossing over some real hurdles, a big one being the radial creation and mea
  
 ## References
 - Herrera Valencia, N., Srivastav, V., Leedumrongwatthanakun, S., McCutcheon, W. & Malik, M. Entangled ripples and twists of light: Radial and azimuthal Laguerre-Gaussian mode entanglement. *Journal of Optics* 23, 104001 (2021). [https://doi.org/10.1088/2040-8986/ac213c](https://doi.org/10.1088/2040-8986/ac213c)
-- Lib & Bromberg, Resource-efficient photonic quantum computation with high-dimensional cluster states, *Nature Photonics* 2024 [https://www.researchgate.net/publication/384072569_Resource-efficient_photonic_quantum_computation_with_high-dimensional_cluster_states](https://www.researchgate.net/publication/384072569_Resource-efficient_photonic_quantum_computation_with_high-dimensional_cluster_states)
-- Lib, Sulimany & Bromberg, Processing Entangled Photons in High Dimensions with a Programmable Light Converter, *Phys. Rev. Applied* 2022. [https://arxiv.org/abs/2108.02258](https://arxiv.org/abs/2108.02258)
+- Lib, Sulimany & Bromberg, Processing Entangled Photons in High Dimensions with a Programmable Light Converter, *Phys. Rev. Applied* 18, 014063 (2022). [https://arxiv.org/abs/2108.02258](https://arxiv.org/abs/2108.02258)
 - Brandt et al., High-dimensional quantum gates using full-field spatial modes of photons *Optica* 2020. [https://arxiv.org/abs/1907.13002](https://arxiv.org/abs/1907.13002)
 - He, C., Shen, Y. & Forbes, A. Towards higher-dimensional structured light. *Light Sci. Appl.* 11, 205 (2022). [https://doi.org/10.1038/s41377-022-00897-3](https://doi.org/10.1038/s41377-022-00897-3)
 - Lib, O. & Bromberg, Y. Resource-efficient photonic quantum computation with high-dimensional cluster states. *Nature Photonics* 18, 1218–1224 (2024). [https://www.nature.com/articles/s41566-024-01524-w](https://www.nature.com/articles/s41566-024-01524-w)
