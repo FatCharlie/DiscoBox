@@ -157,7 +157,7 @@ I'm glossing over some real hurdles, a big one being the radial creation and mea
 
 ![crosstalk-by-mode-group-barchart](images/discobox_mode_group_crosstalk.png)
 
- Looking at the noise we can see p > 2 has the greatest cross-talk potential so we will widen l before trying p.
+ Looking at the noise we can see p > 2 has the greatest cross-talk potential so we will widen  $\ell$ before trying  $p$.
 
  
 ## References
