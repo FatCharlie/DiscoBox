@@ -1,7 +1,8 @@
 # DiscoBox
 
-An open-source photonic quantum computer targeting cluster states equivalent to __8 qubits__ (and beyond!)
-Status: design phase, not yet built.
+An open-source photonic quantum computing platform targeting an **8-qubit** cluster state (and beyond!)
+
+$\small\text{Status: design phase, not yet built.}$
 
 ## The quick of it  
 The architecture can be described as:
@@ -20,13 +21,13 @@ $$
 
 We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
-Then send it into our Beta Barium Borate (BBO) type-ii non-linear crystal where one photon in billions will split into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
+Then send it into our Beta Barium Borate (BBO) non-linear crystal where our 405-nm pump drives type-II SPDC in BBO, producing correlated 810-nm photon pairs.
 
 Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which splits the photons down seperate paths (and some index flipping tricks we will see later).
 
 Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written (via Unitary transformations), and also set the measurement basis before we send it into the fiber. A single-mode fiber only efficiently couples the fundamental Gaussian mode, so the last hologram is calculated to "flatten" whichever mode we're currently projecting onto back down into that fundamental mode.
 
-And finally each path hits its own Single Photon Avalanche Diode (SPAD) detector. Our final "1-16" value per photon is determined by which of the 16 sequential hologram settings on that path's MPLC was active when the click registered, our SPAD only registers a click - we're going the cheap route to start with we can upgrade this later.
+And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detector. Our final 1-16 value per photon is determined by which of the 16 sequential hologram settings on that path's MPLC was active when the click registered, since our SPAD only registers a click - we're going the cheap route to start with we can upgrade this later.
 
 ![simple schematic](images/discobox_schematic_white2.svg)  
 
@@ -50,7 +51,7 @@ Cross photon gates can't be rearranged after SPDC. The graph work is arranging t
 $\small\textit{Lib and Bromberg have already experimentally encoded four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
 }$
 
-Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. demonstrated exactly this kind of intra-photon gate experimentally, a two-qubit CNOT using the OAM and radial degrees of freedom on a single photon.
+Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. demonstrated exactly this intra-photon gate experimentally, a two-qubit CNOT using the OAM and radial degrees of freedom on a single photon.
 
 ## The Math of it
 
@@ -96,7 +97,7 @@ $$
 |-\ell,p\rangle_B
 $$
 
-We account for noise with a fidelity term (we're hoping to get to ~70%) :
+We account for noise with a fidelity term:
 
 $$
 F = |\langle \Psi_{\text{ideal}} \mid \Psi_{\text{actual}} \rangle|^2
