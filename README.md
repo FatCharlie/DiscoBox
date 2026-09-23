@@ -128,17 +128,17 @@ $$
 
 ## How do we get from 4 photons per qubit to an 8-cluster state ?
 
-CZ between q2 and q3 — a π phase shift on the single mode where q2=q3=1.
-CNOT between q1 and q2 — relabeling: swap the q1=0 and q1=1 modes, but only within the subset where q2=1.
-CNOT between q3 and q4 — same trick, swap q4's labels wherever q3=1.
+ - CZ between q2 and q3 — a π phase shift on the single mode where q2=q3=1.
+ - CNOT between q1 and q2 — relabeling: swap the q1=0 and q1=1 modes, but only within the subset where q2=1.
+ - CNOT between q3 and q4 — same trick, swap q4's labels wherever q3=1.
 
 The final graph is a 4-node chain on photon A (1-2-3-4) with each node also carrying one pendant qubit from photon B hanging off it, which comes from our original SPDC step. 
 
 ![eight_qubit_cluster_c82.svg](images/eight_qubit_cluster_c82.svg)  
 
-## The Next Step
+## The Actual Build
 
-We're going to do this in stages:
+We're going to do this in stages. I'm at stage 0t:
 ```mermaid
 flowchart TD
     A[Gaussian pump, l=0 p=0] --> B[SPDC]
