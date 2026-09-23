@@ -46,14 +46,14 @@ Take our 16d Hilbert space we just created and partition it into "registers" whe
 
 ![single-qudit-split](images/single_photon_qudit_split.svg)
 
-There is some upfront graph work that needs to happen because of the penalty for cross photon gates. 
+There is some upfront graph work that needs to happen because of the penalty for cross photon gates and some cross photon gates are not possible.
 
 ![two-photon-gate-structure](images/two_photon_gate_structure.svg)
 
 $\small\textit{Lib and Bromberg have already experimentally encoded four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
 }$
 
-Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. demonstrated exactly this intra-photon gate experimentally, a two-qubit CNOT using the OAM and radial degrees of freedom on a single photon.
+Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. have already experimentally demonstrated this exact configuration.
 
 
 ## The Math of it
