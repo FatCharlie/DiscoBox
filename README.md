@@ -75,7 +75,7 @@ $$
 |\psi_{\text{pump}}\rangle = |0,0\rangle
 $$
 
-Our Type-II BBO crystal gives us perfectly anti-correlated OAM:
+Our Type-II BBO crystal gives us our anti-correlated OAM:
 
 $$
 \ell_A + \ell_B = \ell_{\text{pump}} = 0 \quad\Rightarrow\quad \ell_A = -\ell_B
