@@ -140,7 +140,7 @@ Our target graph is a 4-node chain on photon A (1-2-3-4) with each node also car
 
 ## The Actual Build
 
-We're going to do this in stages. I'm at stage 0t:
+We're going to do this in stages. I'm at stage 0:
 ```mermaid
 flowchart TD
     A[Gaussian pump, l=0 p=0] --> B[SPDC]
