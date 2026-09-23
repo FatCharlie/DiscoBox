@@ -12,9 +12,10 @@ Then send it into our Beta Barium Borate (BBO) non-linear crystal where one 405n
 
 Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which splits the photons down seperate paths (and some index flipping tricks we will see later).
 
-Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written (via Unitary transformations), and also set the measurement basis before we send it into the fiber. A single-mode fiber only efficiently couples the fundamental Gaussian mode, so the last hologram is calculated to "flatten" whichever mode we're currently projecting onto back down into that fundamental mode.
+Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written , and also set the measurement basis before we send it into the fiber. A single-mode fiber only allows its fundamental mode to pass, so the last hologram of the SLM is calculated to flatten the mode down into what the fiber will accept.
 
-And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detector. Our final 1-16 value per photon is determined by which of the 16 sequential hologram settings on that path's MPLC was active when the click registered, since our SPAD only registers a click - we're going the cheap route to start with we can upgrade this later.
+And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detector. We're using cheap SPADs to start with, which only register a single click, so we'll cycle through 16 masks in the end SLM step that we'll correlate with the time to get our end value of 1-16 (a quick tomology).
+
 
 ![simple schematic](images/discobox_schematic_white2.svg)  
 
