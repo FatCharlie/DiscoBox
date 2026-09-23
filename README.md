@@ -12,7 +12,7 @@ Send it into our Beta Barium Borate (BBO) non-linear crystal where one 405nm pho
 
 Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which splits the photons down seperate paths (and some index flipping tricks we will see later).
 
-Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written , and also set the measurement basis before we send it into the fiber. A single-mode fiber only allows its fundamental mode to pass, so the last hologram of the SLM is calculated to flatten the mode down into what the fiber will accept.
+Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written , and also set the measurement basis before we send it into the fiber. A single-mode fiber only allows its fundamental mode (guassian) to pass, so the last hologram of the SLM is calculated to flatten the mode down into what the fiber will accept.
 
 And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detector. We're using cheap SPADs to start with, which only register a single click, so we'll cycle through 16 masks in the end SLM step that we'll correlate with the time to get our end value of 1-16 (tomology is slow, we will swap this out for something faster later).
 
