@@ -38,7 +38,7 @@ $$
 ## Let's make some dimensions
 ![oam-radoal-modes](images/oam-radial-modes-white3.svg)
 
-We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions (**l*p**)  in preparation for the next step which must be said with jazz hands: ***hyper-dimensional-encoding*** (the creators Lib & Bromberg call it "high-dimensional spatial encoding of cluster states")
+We're scaling our 405nm-laser-spdc-entangled-photons into high dimensions by twisting the orbital angular momentum (2 to the left and 2 to the right for **l=4 distinct values {-2,-1,1,2}**) and altering the radials (**p=4 distinct values {0,1,2,3}**)  for 16 usable dimensions ($\ell \times p$) in preparation for the next step which must be said with jazz hands: ***hyper-dimensional-encoding*** (the creators Lib & Bromberg call it "high-dimensional spatial encoding of cluster states")
 
 ## Hyper Dimensional Encoding
 
@@ -103,8 +103,9 @@ $$
 We account for noise with a fidelity term:
 
 $$
-F = |\langle \Psi_{\text{ideal}} \mid \Psi_{\text{actual}} \rangle|^2
+F = \langle \Psi_{\text{ideal}} | \rho_{\text{actual}} | \Psi_{\text{ideal}} \rangle
 $$
+
 
 #### photon A
 $$
