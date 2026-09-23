@@ -19,7 +19,8 @@ And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detecto
 ![simple schematic](images/discobox_schematic_white2.svg)  
 
 None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by simply swapping in better hardware. 
-The architecture can be described as:
+
+The architecture can be described roughly as:
 
 $$
 \boxed{
