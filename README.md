@@ -126,46 +126,15 @@ $$
 \end{aligned}
 $$
 
-The complete transformation for each photon can be written as:
+## How do we get from 4 photons per qubit to an 8-cluster state ?
 
-$$
-|\Psi_{\mathrm{SPDC}}\rangle
-\longrightarrow
-(U_A \otimes U_B)|\Psi_{\mathrm{SPDC}}\rangle
-$$
+CZ between q2 and q3 — a π phase shift on the single mode where q2=q3=1.
+CNOT between q1 and q2 — relabeling: swap the q1=0 and q1=1 modes, but only within the subset where q2=1.
+CNOT between q3 and q4 — same trick, swap q4's labels wherever q3=1.
 
-The goal is to choose the two local transformations such that:
+The final graph is a 4-node chain on photon A (1-2-3-4) with each node also carrying one pendant qubit from photon B hanging off it, which comes from our original SPDC step. 
 
-$$
-(U_A \otimes U_B)|\Psi_{\mathrm{SPDC}}\rangle
-\approx
-|C_8\rangle
-$$
-
-where $|C_8\rangle$ is the desired eight-qubit cluster state.
-
-The architecture is therefore:
-
-```
-16D SPDC biphoton
-          |
-   +------+------+
-   |             |
-Photon A      Photon B
-   |             |
-16 modes      16 modes
-   |             |
-  MPLC A       MPLC B
-   |             |
-q1 q2 q3 q4  q5 q6 q7 q8
-   |             |
-   +------+------+
-          |
-   8 logical qubits
-          |
-     cluster state
-```
-
+![eight_qubit_cluster_c82.svg](images/eight_qubit_cluster_c82.svg)  
 
 ## The Next Step
 
