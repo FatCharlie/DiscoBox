@@ -126,7 +126,7 @@ $$
 \end{aligned}
 $$
 
-## How do we get from 4 photons per qubit to an 8-qubit cluster state?
+## How do we get from 4 qubits per photon to an 8-qubit cluster state?
 
 - CZ between q2 and q3 — apply a $\pi$ phase shift to the single mode where $q_2=q_3=1$.
 - CNOT between q1 and q2 — perform a mode permutation that swaps the $q_1=0$ and $q_1=1$ modes wherever $q_2=1$.
