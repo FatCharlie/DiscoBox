@@ -20,16 +20,15 @@ $$
 
 We start with a pure 405nm transverse pump wave where $\ell,p=0$.
 
-Send it into our Beta Barium Borate (BBO) type-ii non-linear crystal where occasionally one 405nm photon splits into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
+Then send it into our Beta Barium Borate (BBO) type-ii non-linear crystal where one photon in billions will split into two 810nm daughter photons and become entangled via Spontaneous Parametric Down Conversion (SPDC). 
 
-Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which both splits the paths and by reflecting off the PBS we physically flip the sign of the reflected photon's OAM index, which is what lets us pair up the anti-correlated ℓ values later (more in the math section).
+Our entangled photons exit the crystal with orthogonal polarizations (from the type-II phase matching), which we exploit with a polarizing beam splitter (PBS) which splits the photons down seperate paths (and some index flipping tricks we will see later).
 
 Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written (via Unitary transformations), and also set the measurement basis before we send it into the fiber. A single-mode fiber only efficiently couples the fundamental Gaussian mode, so the last hologram is calculated to "flatten" whichever mode we're currently projecting onto back down into that fundamental mode.
 
-Finally each path hits its own Single Photon Avalanche Diode (SPAD) detector. The final "1-16" value per photon isn't read out simultaneously, it's determined by which of the 16 sequential hologram settings on that path's MPLC was active when the click registered.
+And finally each path hits its own Single Photon Avalanche Diode (SPAD) detector. Our final "1-16" value per photon is determined by which of the 16 sequential hologram settings on that path's MPLC was active when the click registered, our SPAD only registers a click - we're going the cheap route to start with we can upgrade this later.
 
 ![simple schematic](images/discobox_schematic_white2.svg)  
-
 
 None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by simply swapping in better hardware. 
 
