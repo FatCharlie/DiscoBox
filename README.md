@@ -126,13 +126,13 @@ $$
 \end{aligned}
 $$
 
-## How do we get from 4 photons per qubit to an 8-cluster state ?
+## How do we get from 4 photons per qubit to an 8-qubit cluster state?
 
- - CZ between q2 and q3 — a π phase shift on the single mode where q2=q3=1.
- - CNOT between q1 and q2 — relabeling: swap the q1=0 and q1=1 modes, but only within the subset where q2=1.
- - CNOT between q3 and q4 — same trick, swap q4's labels wherever q3=1.
+- CZ between q2 and q3 — apply a $\pi$ phase shift to the single mode where $q_2=q_3=1$.
+- CNOT between q1 and q2 — perform a mode permutation that swaps the $q_1=0$ and $q_1=1$ modes wherever $q_2=1$.
+- CNOT between q3 and q4 — perform the equivalent permutation on $q_4$ wherever $q_3=1$.
 
-The final graph is a 4-node chain on photon A (1-2-3-4) with each node also carrying one pendant qubit from photon B hanging off it, which comes from our original SPDC step. 
+Our target graph is a 4-node chain on photon A (1-2-3-4) with each node also carrying one pendant qubit from photon B hanging off it, which comes from our original SPDC step. 
 
 ![eight_qubit_cluster_c82.svg](images/eight_qubit_cluster_c82.svg)  
 
