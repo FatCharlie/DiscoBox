@@ -51,7 +51,7 @@ Cross photon gates can't be rearranged after SPDC. The graph work is arranging t
 $\small\textit{Lib and Bromberg have already experimentally encoded four qubits in 16 spatial modes of a photon as part of an eight-qubit cluster state.
 }$
 
-Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. already demonstrated exactly this kind of intra-photon gate experimentally, a two-qubit CNOT using the OAM and radial degrees of freedom on a single photon, so this isn't just a theoretical trick.
+Which gives us 4 logical qubits per photon. If you want to build a full GHZ state from registers 1,2&3 via an H and two CNOT gates you can totally do that. Brandt et al. demonstrated exactly this kind of intra-photon gate experimentally, a two-qubit CNOT using the OAM and radial degrees of freedom on a single photon.
 
 ## The Math of it
 
@@ -97,13 +97,11 @@ $$
 |-\ell,p\rangle_B
 $$
 
-We account for noise with a fidelity term :
+We account for noise with a fidelity term (we're hoping to get to ~70%) :
 
 $$
 F = |\langle \Psi_{\text{ideal}} \mid \Psi_{\text{actual}} \rangle|^2
 $$
-
-Hoping to get to ~70% eventually.
 
 #### photon A
 $$
@@ -144,7 +142,7 @@ flowchart TD
 ```
 
 # Notes
-I'm glossing over some real hurdles, a big one being the radial creation and measurement, which the authors below have also flagged. Hoping to do what Valencia et al. and create a larger mode size but only keep a subsection where the noise is less likely to happen
+I'm glossing over some real hurdles, a big one being the radial creation and measurement, which the authors below have also flagged. Hoping to do what Valencia et al. did and create a larger mode size but only keep a subsection where the noise is less likely to happen
 
 ![crosstalk-by-mode-group-barchart](images/discobox_mode_group_crosstalk.png)
 
