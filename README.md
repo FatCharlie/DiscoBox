@@ -6,7 +6,7 @@ $\small\text{Status: design phase, not yet built.}$
 
 ## The quick of it  
 
-We start with a pure 405nm transverse pump wave where $\ell,p=0$.
+We start with a pure 405nm transverse pump wave (laser) where $\ell,p=0$.
 
 Send it into our Beta Barium Borate (BBO) non-linear crystal where one 405nm photon occasionally splits into two 810nm daughters.
 
