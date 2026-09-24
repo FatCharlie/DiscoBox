@@ -14,7 +14,7 @@ Our entangled photons exit the crystal with orthogonal polarizations (from the t
 
 Each path gets a Multi-plane light converter (MPLC) setup, which is a Spatial Light Modulator (SLM) and a mirror angled to make several passes through it. Here is where our quantum gates get written , and also set the measurement basis before we send it into the fiber. A single-mode fiber only allows its fundamental mode (guassian) to pass, so the last hologram of the SLM is calculated to flatten the mode down into what the fiber will accept.
 
-And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detector. We're using cheap SPADs to start with, which only register a single click, so we'll cycle through 2^N masks in the end SLM step that we'll correlate with the time (tomology is slow, we will swap this out for something faster later).
+And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detector. We're using cheap SPADs to start with, which only register a single click, so we'll cycle through 2^N masks in the end SLM step that we'll correlate with time (tomology is slow, we will swap this out for something faster later).
 
 
 ![simple schematic](images/discobox_schematic_white2.svg)  
