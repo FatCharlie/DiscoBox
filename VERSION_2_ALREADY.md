@@ -26,13 +26,7 @@ $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qu
 
 The entire first DiscoBox is built around proving that architecture end to end.
 
-No radial qubits yet.
-
-No giant detector array yet.
-
-No attempt at scaling to eight or ten qubits yet.
-
-First we're going to make the smallest version of this thing that actually works.
+We're going to make the smallest version of this thing that actually works.
 
 ---
 
@@ -59,13 +53,13 @@ flowchart LR
     T --> C[DiscoBox Control Software]
 ```
 
-The important bit is that **the connections between the source, processors and analyzers are not ordinary single-mode fiber**.
+The important part is **the connections between the source, processors and analyzers are not ordinary single-mode fiber**.
 
-Our transverse mode is the quantum state.
+Our transverse mode __is__ the quantum state.
 
 If we shove
 
-$$\sum_{\ell}c_\ell|\ell\rangle$$
+$$|\psi\rangle=\sum_{\ell}c_\ell|\ell,p=0\rangle$$
 
 into an ordinary single-mode fiber, the fiber only accepts its fundamental Gaussian mode and we've thrown away the thing we're trying to compute with.
 
@@ -137,7 +131,7 @@ $$|\Psi\rangle=\sum_\ell c_\ell|\ell,0\rangle_A|-\ell,0\rangle_B+|\text{junk}\ra
 
 where the amplitudes aren't perfectly equal and the junk contains radial leakage, neighboring OAM modes, background counts and all the other fun things reality provides.
 
-Characterizing that is literally Stage 1 of the project.
+Flushing this out is stage 1.
 
 ---
 
