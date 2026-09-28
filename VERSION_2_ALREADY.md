@@ -1,32 +1,41 @@
 # DiscoBox
 
-An open-source photonic quantum computing platform targeting a **4-qubit linear cluster state** using only two photons.
+An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons $\small\text{(theoretically up to 500-qubit cluster with the same SLM).}$
 
 $\small\text{Status: design phase, not yet built.}$
 
 ## The quick of it
 
-We're going to start smaller.
+We start with a pure 405nm laser transverse pump wave laser where $$\ell$$ is our orbital angular momentum twist count (whole number rotations per wavelength), and $$p$$ is our radial count (concentric rings around the center beam)
 
-Instead of trying to immediately use both OAM and radial modes to cram four logical qubits into each photon, we're freezing the radial degree of freedom at:
+$$\ell,p = 0$$
 
-$$p=0$$
+In this first iteration we're not going to use radials they are notoriously difficult, so we'll freeze at:
 
-and using four orbital angular momentum modes:
+$$
+p \in \\{0\\}
+$$
 
-$$\ell\in\{-2,-1,+1,+2\}.$$
 
-That gives us a four-dimensional spatial Hilbert space per photon:
+and use 4 orbital angular momentum (OAM) modes by twisting two to the left(-2) and two to the right(+2):
+
+$$\ell \in \\{-2,-1,+1,+2\\}.$$
+
+gives us 4 usable dimensions:
+
+$$d = |L| \cdot |P|$$
+
+and a 4d Hilbert space per photon:
 
 $$4\text{ OAM modes}\rightarrow4\text{-dimensional qudit}\rightarrow2\text{ logical qubits}.$$
 
-We create two entangled photons, so:
+Where a $$d$$-dimensional qudit allows for $$n$$ qubits:
+
+$$d = 2^n \quad\Longleftrightarrow\quad n = \log_2 d$$
+
+Giving us our first target:
 
 $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qubits}}$$
-
-The entire first DiscoBox is built around proving that architecture end to end.
-
-We're going to make the smallest version of this thing that actually works.
 
 ---
 
