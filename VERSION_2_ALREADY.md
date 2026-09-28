@@ -1,6 +1,6 @@
 # DiscoBox
 
-An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons $\small\text{(theoretically up to 500-qubit cluster with the same SLM).}$
+An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons $\small\text{(theoretically up to 500-qubit cluster with the same hardware).}$
 
 $\small\text{Status: design phase, not yet built.}$
 
@@ -21,19 +21,15 @@ and use 4 orbital angular momentum (OAM) modes by twisting two to the left(-2) a
 
 $$\ell \in \\{-2,-1,+1,+2\\}.$$
 
-gives us 4 usable dimensions:
-
-$$d = |L| \cdot |P|$$
-
-and a 4d Hilbert space per photon:
+with a 4d Hilbert space per photon:
 
 $$\mathcal{H} = \mathrm{span}\{\,|{-2},0\rangle,\ |{-1},0\rangle,\ |{+1},0\rangle,\ |{+2},0\rangle\,\}\cong\mathbb{C}^4$$
 
-Where a $$d$$-dimensional qudit allows for $$n$$ qubits:
+where a $$d$$-dimensional qudit allows for $$n$$ qubits:
 
 $$d = 2^n \quad\Longleftrightarrow\quad n = \log_2 d$$
 
-Giving us our first target:
+giving us our first target:
 
 $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qubits}}$$
 
@@ -43,7 +39,7 @@ $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qu
 
 ## A top down view
 
-DiscoBox will be made of optical cartridges with the same input and output format:
+DiscoBox will be composed of optical cartridges with a standardized input/output format [the cartridge](#the-discoBox-cartridge):
 
 ```mermaid
 flowchart LR
@@ -64,7 +60,7 @@ flowchart LR
     T --> C[DiscoBox Control Software]
 ```
 
-The important part is **the connections between the source, processors and analyzers are not ordinary single-mode fiber**. Single=mode fiber forces us into a pure Guassian.
+The important part is **the connections between the source, processors and analyzers are not ordinary single-mode fiber**. Single-mode fiber forces us into a pure Gaussian mode which destroys everything.
 
 Our transverse mode __is__ the quantum state.
 
@@ -72,94 +68,45 @@ Making the pipeline:
 
 $$\boxed{\text{free-space spatial qudit}\rightarrow\text{processing}\rightarrow\text{measurement projection}\rightarrow\text{Gaussian}\rightarrow\text{fiber}\rightarrow\text{SPAD}}$$
 
----
 
-# Cartridge 1 — The Source
+# The DiscoBox Cartridge
 
-We start with a clean 405 nm Gaussian pump:
-
-$$|\psi_{\text{pump}}\rangle=|0,0\rangle.$$
-
-It goes into our Beta Barium Borate (BBO) nonlinear crystal where Type-II spontaneous parametric down-conversion occasionally converts one pump photon into two approximately 810 nm daughter photons.
-
-The daughters leave with orthogonal polarizations, which gives us a convenient way to separate them into two paths:
-
-```text
-                    405 nm
-                      │
-                      ▼
-                 ┌─────────┐
-                 │   BBO   │
-                 └────┬────┘
-                      │
-                     SPDC
-                      │
-                      ▼
-                     PBS
-                   /     \
-                  /       \
-            Photon A     Photon B
-              810nm        810nm
-```
-
-Those become the two physical photonic rails of DiscoBox.
-
-We remove the remaining pump light, spectrally clean up the 810 nm photons, collimate both outputs and send them through the two output ports of the source cartridge.
-
-The SPDC source gives us OAM anti-correlation:
-
-$$\ell_A+\ell_B=\ell_{\text{pump}}=0$$
-
-so:
-
-$$\ell_A=-\ell_B.$$
-
-We're going to select four modes:
-
-$$\ell\in\{-2,-1,+1,+2\}$$
-
-and only accept the lowest radial mode:
-
-$$p=0.$$
-
-So our idealized four-dimensional entangled state is:
-
-$$|\Phi_4\rangle=\frac{1}{2}\sum_{\ell\in\{-2,-1,+1,+2\}}|\ell,0\rangle_A|-\ell,0\rangle_B.$$
-
-Real life will instead give us something closer to:
-
-$$|\Psi\rangle=\sum_\ell c_\ell|\ell,0\rangle_A|-\ell,0\rangle_B+|\text{junk}\rangle$$
-
-where the amplitudes aren't perfectly equal and the junk contains radial leakage, neighboring OAM modes, background counts and all the other fun things reality provides.
-
-Flushing this out is stage 1.
-
----
-
-# The DiscoBox Optical Port
-
-Every cartridge that carries the spatial qudit gets the same mechanical and optical interface.
+Every cartridge gets the same mechanical and optical interface.
 
 The interface is a **collimated 810 nm free-space beam** passing through a keyed mechanical port.
 
-```text
-       CARTRIDGE A                         CARTRIDGE B
 
- ┌─────────────────────┐             ┌─────────────────────┐
- │                     │             │                     │
- │     internal        │             │       internal      │
- │      optics         │             │        optics       │
- │         │           │             │           │         │
- │         ●───────────┼═════════════┼───────────●         │
- │                     │ optical     │                     │
- └─────────────────────┘ tunnel      └─────────────────────┘
+## Cartridge interconnect
+
+```mermaid
+flowchart LR
+    subgraph CA["Cartridge A"]
+        optA["Internal optics"]
+        portA(("port"))
+    end
+
+    subgraph CB["Cartridge B"]
+        portB(("port"))
+        optB["Internal optics"]
+    end
+
+    optA --- portA
+    portA ===|"optical tunnel"| portB
+    portB --- optB
+
+    style CA fill:#1e293b,stroke:#64748b,color:#e2e8f0
+    style CB fill:#1e293b,stroke:#64748b,color:#e2e8f0
+    style optA fill:#0f172a,stroke:#38bdf8,color:#e2e8f0
+    style optB fill:#0f172a,stroke:#38bdf8,color:#e2e8f0
+    style portA fill:#38bdf8,stroke:#0ea5e9,color:#0f172a
+    style portB fill:#38bdf8,stroke:#0ea5e9,color:#0f172a
+    linkStyle 1 stroke:#38bdf8,stroke-width:4px
 ```
+ 
 
-The section marked `══════` is not fiber.
+The inter-connect **is not fiber**.  It's a short opaque optical tube.
 
-It's a short opaque optical tube.
-
-The cartridges bolt to a common chassis and locate against mechanical reference surfaces/dowel pins so removing a cartridge does not mean completely realigning the machine.
+The cartridges bolt to a common chassis so **removing a cartridge does not mean completely realigning the machine**. It also makes it portable instead of locked to an optical-table.
 
 The optical interface specification eventually defines:
 
@@ -187,6 +134,57 @@ It receives:
 $$|\psi\rangle=\sum_\ell c_\ell|\ell,p=0\rangle$$
 
 at a known optical plane and does its job.
+
+---
+
+# Cartridge 1 — The Source
+
+We start with a clean 405 nm Gaussian pump:
+
+$$|\psi_{\text{pump}}\rangle=|0,0\rangle.$$
+
+It goes into our Beta Barium Borate (BBO) nonlinear crystal where Type-II spontaneous parametric down-conversion occasionally converts one pump photon into two half-energy 810 nm daughter photons.
+
+The daughters leave with orthogonal polarizations which can we switch on with our polarizing beam splitter(PBS):
+
+```mermaid
+flowchart TD
+    pump["405 nm pump"] --> bbo["BBO crystal"]
+    bbo -->|SPDC| pbs{"PBS"}
+    pbs --> A["Photon A<br/>810 nm"]
+    pbs --> B["Photon B<br/>810 nm"]
+```
+Those become the two physical photonic rails of DiscoBox.
+
+We remove the remaining pump light, spectrally clean up the 810 nm photons, collimate both outputs and send them through the two output ports of the source cartridge.
+
+The SPDC source gives us:
+
+$$\ell_A+\ell_B=\ell_{\text{pump}}=0$$
+
+and our anti-correlation falls out:
+
+$$\ell_A=-\ell_B.$$
+
+select four modes:
+
+$$\ell\in\{-2,-1,+1,+2\}$$
+
+ accept the lowest radial mode:
+
+$$p=0.$$
+
+our 4d entangled state is:
+
+$$|\Phi_4\rangle=\frac{1}{2}\sum_{\ell\in\{-2,-1,+1,+2\}}|\ell,0\rangle_A|-\ell,0\rangle_B.$$
+
+real life will instead give us something closer to:
+
+$$|\Psi\rangle=\sum_\ell c_\ell|\ell,0\rangle_A|-\ell,0\rangle_B+|\text{junk}\rangle$$
+
+where the amplitudes aren't perfect and the junk contains radial leakage, neighboring modes, and all the other fun things life provides.
+
+**Flushing this out is stage 1.**
 
 ---
 
