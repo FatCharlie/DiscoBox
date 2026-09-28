@@ -192,24 +192,23 @@ where the amplitudes aren't perfect and the junk contains radial leakage, neighb
 
 Photon A and photon B each get an identical processor cartridge.
 
-```text
-                 PROCESSOR
+```mermaid
+flowchart TD
+    qin(["qudit in"]) --> bc
 
-     qudit in
-        │
-        ▼
-   beam conditioning
-        │
-        ▼
-   ┌───────────┐
-   │           │
-   │ SLM/MPLC  │
-   │           │
-   └─────┬─────┘
-         │
-         ▼
-      qudit out
+    subgraph P["PROCESSOR"]
+        bc["beam conditioning"] --> slm["SLM / MPLC"]
+    end
+
+    slm --> qout(["qudit out"])
+
+    style P fill:#1e293b,stroke:#64748b,color:#e2e8f0
+    style qin fill:#38bdf8,stroke:#0ea5e9,color:#0f172a
+    style qout fill:#38bdf8,stroke:#0ea5e9,color:#0f172a
+    style bc fill:#0f172a,stroke:#38bdf8,color:#e2e8f0
+    style slm fill:#0f172a,stroke:#38bdf8,color:#e2e8f0,stroke-width:3px
 ```
+
 
 For the development version, the heart of the processor is a programmable multi-plane light converter.
 
@@ -225,17 +224,9 @@ $$U\in U(4).$$
 
 That is enough space for two logical qubits.
 
-For DiscoBox the SLM is our development engine.
+Eventually transformations which never need to change could be replaced with fixed phase elements or fabricated MPLC optics. 
 
-We can change the transformation in software instead of rebuilding the optics every time we get something wrong.
 
-Eventually transformations which never need to change could be replaced with fixed phase elements or fabricated MPLC optics.
-
-But absolutely not yet.
-
-First we make it work.
-
----
 
 # Let's make some qubits
 
