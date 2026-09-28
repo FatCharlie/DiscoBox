@@ -27,7 +27,7 @@ $$d = |L| \cdot |P|$$
 
 and a 4d Hilbert space per photon:
 
-$$4\text{ OAM modes}\rightarrow4\text{-dimensional qudit}\rightarrow2\text{ logical qubits}.$$
+$$\mathcal{H} = \mathrm{span}\{\,|{-2},0\rangle,\ |{-1},0\rangle,\ |{+1},0\rangle,\ |{+2},0\rangle\,\}\cong\mathbb{C}^4$$
 
 Where a $$d$$-dimensional qudit allows for $$n$$ qubits:
 
@@ -37,11 +37,13 @@ Giving us our first target:
 
 $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qubits}}$$
 
+![oam-radoal-modes](images/oam-radial-modes-white3.svg)
+
 ---
 
-## What the machine physically looks like
+## A top down view
 
-DiscoBox is split into optical cartridges:
+DiscoBox will be made of optical cartridges with the same input and output format:
 
 ```mermaid
 flowchart LR
@@ -62,21 +64,11 @@ flowchart LR
     T --> C[DiscoBox Control Software]
 ```
 
-The important part is **the connections between the source, processors and analyzers are not ordinary single-mode fiber**.
+The important part is **the connections between the source, processors and analyzers are not ordinary single-mode fiber**. Single=mode fiber forces us into a pure Guassian.
 
 Our transverse mode __is__ the quantum state.
 
-If we shove
-
-$$|\psi\rangle=\sum_{\ell}c_\ell|\ell,p=0\rangle$$
-
-into an ordinary single-mode fiber, the fiber only accepts its fundamental Gaussian mode and we've thrown away the thing we're trying to compute with.
-
-So while the photon still contains an OAM qudit, it travels between cartridges through a short enclosed free-space optical connection.
-
-Only after the analyzer converts the selected mode back into a Gaussian do we use ordinary fiber.
-
-The machine is therefore roughly:
+Making the pipeline:
 
 $$\boxed{\text{free-space spatial qudit}\rightarrow\text{processing}\rightarrow\text{measurement projection}\rightarrow\text{Gaussian}\rightarrow\text{fiber}\rightarrow\text{SPAD}}$$
 
