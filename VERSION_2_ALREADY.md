@@ -145,7 +145,7 @@ $$|\psi_{\text{pump}}\rangle=|0,0\rangle.$$
 
 It goes into our Beta Barium Borate (BBO) nonlinear crystal where Type-II spontaneous parametric down-conversion occasionally converts one pump photon into two half-energy 810 nm daughter photons.
 
-The daughters leave with orthogonal polarizations which can we switch on with our polarizing beam splitter(PBS):
+The daughters leave with orthogonal polarizations which can we filter on with our polarizing beam splitter (PBS):
 
 ```mermaid
 flowchart TD
