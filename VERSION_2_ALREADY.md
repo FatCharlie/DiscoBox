@@ -35,6 +35,8 @@ $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qu
 
 ![oam-radoal-modes](images/oam-radial-modes-white3.svg)
 
+None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by  swapping in better hardware.
+
 ---
 
 ## A top down view
@@ -60,7 +62,7 @@ flowchart LR
     T --> C[DiscoBox Control Software]
 ```
 
-**The connections between the source, processors and analyzers are not ordinary single-mode fiber, it's a short opaque optical tube**. Single-mode fiber (SMF) forces us into a Gaussian mode which destroys our delicate state.
+The connections between the source, processors and analyzers **are not ordinary single-mode fiber**, it's a short opaque optical tube. Single-mode fiber (SMF) forces us into a Gaussian mode which destroys our delicate state.
 
 Our transverse mode __is__ the quantum state.
 
