@@ -6,7 +6,7 @@ $\small\text{Status: design phase, not yet built.}$
 
 ## The quick of it
 
-We start with a pure 405nm laser transverse pump wave laser where $$\ell$$ is our orbital angular momentum twist count (whole number rotations per wavelength), and $$p$$ is our radial count (concentric rings around the center beam)
+We start with a pure 405nm transverse pump laser wave where $$\ell$$ is our orbital angular momentum twist count (whole number rotations per wavelength), and $$p$$ is our radial count (concentric rings around the center beam)
 
 $$\ell,p = 0$$
 
@@ -39,7 +39,7 @@ $$\boxed{2\text{ photons}\times2\text{ logical qubits/photon}=4\text{ logical qu
 
 ## A top down view
 
-DiscoBox will be composed of optical cartridges with a standardized input/output format [the cartridge](#the-discoBox-cartridge):
+DiscoBox will be composed of optical cartridges with a standardized input/output format:
 
 ```mermaid
 flowchart LR
@@ -60,7 +60,7 @@ flowchart LR
     T --> C[DiscoBox Control Software]
 ```
 
-The important part is **the connections between the source, processors and analyzers are not ordinary single-mode fiber**. Single-mode fiber forces us into a pure Gaussian mode which destroys everything.
+**The connections between the source, processors and analyzers are not ordinary single-mode fiber, it's a short opaque optical tube**. Single-mode fiber (SMF) forces us into a Gaussian mode which destroys our delicate state.
 
 Our transverse mode __is__ the quantum state.
 
@@ -234,6 +234,10 @@ Each photon has four physical basis states:
 
 $$|-2,0\rangle,\quad|-1,0\rangle,\quad|+1,0\rangle,\quad|+2,0\rangle.$$
 
+Gives us our 4d Hilbert space:
+
+$$\dim\mathcal{H} = 4$$
+
 A four-dimensional Hilbert space can be partitioned into two logical two-dimensional registers:
 
 $$\mathcal H_4\cong\mathcal H_2\otimes\mathcal H_2.$$
@@ -291,13 +295,11 @@ That's the trick we're building the machine around.
 # Turning two Bell pairs into a 4-qubit cluster
 
 Right after the source our graph looks roughly like:
-
-```text
-q4 ─── q1
-
-q3 ─── q2
+```mermaid
+flowchart LR
+    q4((q4)) --- q1((q1))
+    q3((q3)) --- q2((q2))
 ```
-
 Two disconnected entangled pairs.
 
 But \(q_1\) and \(q_2\) are not two physical photons.
@@ -330,18 +332,16 @@ Now our graph becomes:
 q4 ─── q1 ─── q2 ─── q3
 ```
 
-which is a four-node linear cluster state.
-
-So the entire four-qubit state requires:
+**This is our 4 qubit cluster**.
 
 - two physical photons
 - one four-dimensional qudit per photon
 - the original cross-photon entanglement from SPDC
 - one intra-photon logical CZ gate
 
-and no photon-on-photon gate after the SPDC source.
 
-That's the first complete DiscoBox.
+
+###That's the first complete DiscoBox target.
 
 ---
 
