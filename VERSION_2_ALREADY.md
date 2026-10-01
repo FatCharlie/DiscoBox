@@ -1,6 +1,6 @@
 # DiscoBox
 
-An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons $\small\text{(theoretically up to 500-qubit cluster with the same hardware).}$
+An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons
 
 $\small\text{Status: design phase, not yet built.}$
 
