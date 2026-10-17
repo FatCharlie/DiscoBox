@@ -1,5 +1,11 @@
 # DiscoBox
 
+
+<p align="center">
+  <img src="disco_box_small.jpg" alt="Alt Text" width="500">
+</p>
+
+
 An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons
 
 $\small\text{Status: design phase, not yet built.}$
