@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="disco_box_small.jpg" alt="Alt Text" width="500">
+  <img src="disco_box_small_4.jpg" alt="Alt Text" width="500">
 </p>
 
 
