@@ -6,7 +6,7 @@
 </p>
 
 
-An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons (scaling to 8 with just OAM and radials as a multiplier)
+An open-source photonic quantum computing platform targeting a **4-qubit linear cluster** using only two photons (scaling to 8 with just OAM and more with radials as a multiplier)
 
 $\small\text{Status: design phase, not yet built.}$
 
