@@ -19,7 +19,7 @@ And finally, each path hits its own Single Photon Avalanche Diode (SPAD) detecto
 
 ![simple schematic](images/discobox_schematic_white2.svg)  
 
-None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning, with the hopes that we can scale dimensions (and thus effective qubit size) relatively easily by simply swapping in better hardware. 
+None of this is original work I'm combining Forbes/He/Shen's dimension scaling and Lib/Bromberg's qudit partitioning. 
 
 The architecture can be described roughly as:
 
@@ -34,6 +34,8 @@ $$
 4\text{ logical qubits}
 }
 $$
+
+Oh also this doesn't scale for shit it's actually inverted the quantum advantage. It's quantum disadvantage: I need exponentially more modes per linear qubit. 
 
 ## Let's make some dimensions
 ![oam-radoal-modes](images/oam-radial-modes-white3.svg)
