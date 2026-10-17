@@ -47,7 +47,7 @@ None of this is original work I'm combining Forbes/He/Shen's dimension scaling a
 
 It's quantum disadvantage: I need exponentially more modes per linear qubit. 
 
-But there's still <a href="https://www.sciencedirect.com/topics/engineering/spatial-multiplexing"> the traditional route</a>.
+But there's still <a href="https://www.emergentmind.com/topics/spatiotemporal-multiplexing"> the traditional route</a>.
 
 ---
 
